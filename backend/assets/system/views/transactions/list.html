@@ -1,0 +1,80 @@
+<div class="clearfix"></div>
+<div class="col-md-10">
+    
+
+    <div class="row select-category">
+        <div class="col-md-6 col-xs-12 current-category">
+            <span>Danh sách giao dịch</span>
+        </div>
+        <div class="col-md-6 col-xs-6">
+            <a>
+                <!-- <button class="btn btn-primary pull-right" style="margin-top:20px">Rút tiền</button> -->
+            </a>
+        </div>
+    </div>
+
+    <!-- END QUESTIONS-FILTER -->
+    <div class="main-questions-list">
+        <div class="table-responsive">
+            <table class="table table-border ">
+                <tr>
+                    <th>#</th>
+                    <th>
+                        Mã GD
+                    </th>
+                    <th>
+                        Loại giao dịch
+                    </th>
+                    <th>
+                        Số tiền
+                    </th>
+                    <th>
+                        Nội dung
+                    </th>
+                    <th>
+                        Ngày tháng
+                    </th>
+                   
+                    <!-- <th>
+                        Tác vụ
+                    </th> -->
+                </tr>
+                <tr >
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="bg-success text-white">Số dư : <strong>{{user.user.blance || 0 | vnNumber}}đ</strong></td>
+                    <td class="bg-success text-white">Tiền giới thiệu : <strong>{{user.user.command_blance || 0 | vnNumber}}đ</strong></td>
+                    <td class="bg-success text-white">Tiền mời thành viên : <strong>{{user.user.refer_blance || 0 | vnNumber}}đ</strong></td>
+                </tr>
+                <tr ng-repeat="item in list_transaction">
+                    <td>{{$index + 1}}</td>
+                    <td><a href="">{{item.transaction_id}}</a></td>
+                    <td><p>{{transaction_type[item.type]}}</p></td>
+                    <td><strong>{{item.blance | vnNumber}}đ</strong></td>
+                    <td><p>{{item.description}}</p></td>
+                    <td><p>{{item.createdAt | date:"dd-MM-yyyy  HH:mm"}}</p></td>
+                </tr>
+
+            </table>
+            <div class="col-md-12 text-center" ng-if="loadingData">
+                Đang tải dữ liệu
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN-QUESTIONS-LIST -->
+    <div class="row home">
+    <div class="col-md-12 text-right">
+
+
+        <pagination total-items="item_page" ng-model="currentPage" max-size="item_page" class="pagination-sm"
+                    boundary-links="true" rotate="false" ng-click="load()" first-text="Trang đầu" next-text="Tiếp theo" last-text="Trang cuối" previous-text="Sau"></pagination>
+    </div>
+    </div>
+
+</div>
+
+<div ng-include="'views/transactions/right-sidebar.html'"></div>
+
+<!-- END MAIN-PAGINATIONS -->
+<div class="clearfix"></div>

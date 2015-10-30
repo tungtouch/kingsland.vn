@@ -1,0 +1,78 @@
+<!-- Header
+============================================= -->
+<header id="header" class="full-header transparent-header static-sticky sticky-header" data-sticky-class="not-dark"
+        data-sticky-offset="full" data-sticky-offset-negative="100">
+
+  <div id="header-wrap">
+
+    <div class="container clearfix">
+
+      <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+      <!-- Logo
+      ============================================= -->
+      <div id="logo">
+        <a href="/" class="standard-logo"
+           data-dark-logo="/images/kingsland-white-logo.png"><img
+            src="/images/kingsland-red-logo.png" alt="Canvas Logo"></a>
+        <a href="/index.html" class="retina-logo"
+           data-dark-logo="./images/kingsland-white-logo@2x.png"><img
+            src="/images/kingsland-red-logo@2x.png"
+            alt="Canvas Logo"></a>
+      </div>
+      <!-- #logo end -->
+
+      <!-- Primary Navigation
+      ============================================= -->
+      <nav id="primary-menu">
+
+        <ul>
+          <li><a href="/">
+              <div>Trang chủ</div>
+            </a></li>
+          <li><a href="/p/tro-thanh-nha-dau-tu">
+              <div>Đầu tư</div>
+            </a>
+          </li>
+          <li><a href="http://kingsland.vn/p/tuyen-dung">
+              <div>Tuyển dụng</div>
+            </a></li>
+          <li><a href="/system/#/dang-ky">
+              <button class="button button-border button-circle t500 noleftmargin requestdemobtn"
+                      type="submit" id="template-contactform-submit" name="template-contactform-submit"
+                      value="submit">Tham gia đầu tư
+              </button>
+            </a></li>
+        </ul>
+
+        <!--                     <div id="side-panel-trigger"><a href="/system/#/dang-nhap"><i class="icon-lock"></i></a></div>
+         -->
+      </nav>
+      <!-- #primary-menu end -->
+
+    </div>
+
+  </div>
+
+</header>
+<!-- #header end -->
+
+<!-- Content
+============================================= -->
+<section id="content">
+
+  <div class="content-wrap nopadding container clearfix">
+    <div class="col-xs-12" id="post">
+
+      <div class="page-header">
+        <h1><%= data[0].title %></h1>
+      </div>
+      <div class="page-content">
+        <%- data[0].content %>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End Content
+============================================= -->

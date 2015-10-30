@@ -1,0 +1,108 @@
+<!-- Header
+============================================= -->
+<header id="header" class="full-header transparent-header static-sticky sticky-header" data-sticky-class="not-dark"
+        data-sticky-offset="full" data-sticky-offset-negative="100">
+
+  <div id="header-wrap">
+
+    <div class="container clearfix">
+
+      <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+      <!-- Logo
+      ============================================= -->
+      <div id="logo">
+        <a href="/" class="standard-logo"
+           data-dark-logo="/images/kingsland-white-logo.png"><img
+            src="/images/kingsland-red-logo.png" alt="Canvas Logo"></a>
+        <a href="/index.html" class="retina-logo"
+           data-dark-logo="./images/kingsland-white-logo@2x.png"><img
+            src="/images/kingsland-red-logo@2x.png"
+            alt="Canvas Logo"></a>
+      </div>
+      <!-- #logo end -->
+
+      <!-- Primary Navigation
+      ============================================= -->
+      <nav id="primary-menu">
+
+        <ul>
+          <li><a href="/">
+              <div>Trang chủ</div>
+            </a></li>
+          <li><a href="/p/tro-thanh-nha-dau-tu">
+              <div>Đầu tư</div>
+            </a>
+          </li>
+          <li><a href="http://kingsland.vn/p/tuyen-dung">
+              <div>Tuyển dụng</div>
+            </a></li>
+          <li><a href="/system/#/dang-ky">
+              <button class="button button-border button-circle t500 noleftmargin requestdemobtn"
+                      type="submit" id="template-contactform-submit" name="template-contactform-submit"
+                      value="submit">Tham gia đầu tư
+              </button>
+            </a></li>
+        </ul>
+
+        <!--                     <div id="side-panel-trigger"><a href="/system/#/dang-nhap"><i class="icon-lock"></i></a></div>
+         -->
+      </nav>
+      <!-- #primary-menu end -->
+
+    </div>
+
+  </div>
+
+</header>
+<!-- #header end -->
+
+<!-- Content
+============================================= -->
+<section id="content">
+
+  <div class="content-wrap nopadding container clearfix">
+    <div class="col-md-9" id="lease">
+      <div class="row">
+        <div class="page-header col-xs-12">
+          <h1><%= data[0].title %></h1>
+        </div>
+      </div>
+      <div class="page-content">
+        <div class="overview row">
+          <div class="info col-xs-12">
+            <h5>Thông tin chung</h5>
+            <div class="row">
+              <div class="col-xs-6">
+                <p><strong>Địa chỉ:</strong> <%= data[0].house_number %> <%= data[0].address%></p>
+
+                <p><strong>Khu vực: </strong> <%= data[0].dist %> - Hà Nội</p>
+              </div>
+              <div class="col-xs-6">
+                <p><strong>Diện tích:</strong> <%= data[0].area %>m2</p>
+
+                <p><strong>Giá:</strong> <b class="price-lease"><%= data[0].amount %>đ</b> /tháng</p>
+              </div>
+            </div>
+          </div>
+          <div class="tienich col-xs-12">
+            <h5>Tiện ích</h5>
+            <div class="row">
+              <span class="col-xs-3"><i class="iconvesinh"></i>Nhà vệ sinh</span>
+              <span class="col-xs-3"><i class="iconparking"></i>Chỗ để xe</span>
+              <span class="col-xs-3"><i class="iconsotang"></i>2 tầng</span>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <%- data[0].content %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3" id="colum-right">
+
+    </div>
+  </div>
+</section>
+<!-- End Content
+============================================= -->

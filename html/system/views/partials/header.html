@@ -1,0 +1,105 @@
+<header id="header">
+    <div class="pull-left" id="logo">
+        <a href="#" >
+            <img class="visible-xs" src="style\img\kingland-white-logo.png">
+            <img class="hidden-xs" src="style\img\kingland-white-logo.png">
+        </a>
+    </div>
+    <!-- logo -->
+
+
+   
+    
+    <div id="login_qa" class="pull-right btn-group header-avatar" ng-if="user">
+        <div class="pull-left">
+           <!-- <span id="notification">
+
+                <span data-toggle="dropdown" style="position: absolute;" data-toggle="dropdown" class="notification-number">
+                    <i class="fa fa-bell-o"></i>
+                    <div class="badge" ng-if="unread_notification">{{unread_notification}}</div>
+                </span>
+                <ul id="notifiation_content">
+                    <li ng-class="{'active': !item.seen}" ng-repeat="item in list_notification" ng-click="read_notice(item)">
+                        <a href="">
+                            <span>
+                                <span ng-bind-html="item.content_full"></span>
+                                <br>
+                                <span  am-time-ago="item.createdAt"></span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </span>-->
+        </div>
+
+        <!-- <li style="position: relative;float: left;margin-right: 15px;  padding-left:10px; padding-right:10px; margin-top:5px;  padding-bottom: 20px;list-style-type:none" id="notification" >
+            <i class="fa fa-bell-o"></i>
+             <span class="badge" style="font-size: 10px; background-color: #e74c3c" ng-if="unread_notification">{{unread_notification}}</span>
+        
+        <ul style="
+            position: absolute;
+            top: 41px;
+            background-color: white;
+            z-index: 100;
+            min-width: 340px;
+            left: -80px;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.37);
+            display:none;"
+            id="notifiation_content">
+            
+            <li style="
+            padding: 10px;
+            border-bottom: 1px solid #FCF6F6;" ng-class="{'active': !item.seen}" ng-repeat="item in list_notification" ng-click="read_notice(item)">
+                <a href="" >
+                    <span>
+                        <span ng-bind-html="item.content_full"></span>
+                        <br>
+                        <span am-time-ago="item.createdAt"></span>
+                    </span>
+                </a>
+            </li>
+        </ul> 
+        
+        </li> -->
+
+        <div class="pull-right">
+           <span class="expand dropdown-toggle" type="span" data-toggle="dropdown">
+                <a href="javascript:void(0)" class="dropdown-account ">
+                    <!--<span class="avatar"><img src="http://static.enginethemes.com/demo/qaengine/2015/06/IMG_05092013_155257-150x150.png" class="avatar" alt=""></span>-->
+                    <span class="display_name">
+                        <i class="fa fa-star" ng-if="user.user.privilige == 5" style="margin-right: 3px; color: yellow;"></i>
+                        {{user.user.fullname}}
+                    </span>
+                    <span class="icon-down"><i class="fa fa-chevron-circle-down"></i></span>
+                </a>
+            </span>
+            <ul class="dropdown-menu dropdown-profile">
+               <!-- <li>
+                    <a ui-sref="app.transactions.list">
+                        <i class="fa fa-money"></i> Số dư : {{user.user.blance | vnNumber}} vnđ</a>
+                </li>
+                <li>
+                    <a ui-sref="app.transactions.list">
+                        <i class="fa fa-pencil-square-o"></i> Tiền giới thiệu : {{user.user.command_blance | vnNumber }} vnđ</a>
+                </li>
+                <li>
+                    <a ui-sref="app.transactions.list">
+                        <i class="fa fa-user-plus"></i> Tiền mời thành viên  : {{user.user.refer_blance | vnNumber }} vnđ</a>
+
+                </li>
+-->
+                <li>
+                    <a ui-sref="app.profile">
+                        <i class="fa fa-user"></i> Hồ sơ								</a>
+                </li>
+
+                <li>
+                    <a ng-click="logout()">
+                        <i class="fa fa-power-off"></i> Thoát								</a>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- avatar -->
+</header>

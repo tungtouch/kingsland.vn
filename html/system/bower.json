@@ -1,0 +1,33 @@
+{
+  "name": "bds",
+  "version": "0.0.0",
+  "homepage": "https://github.com/thinhit/bds",
+  "authors": [
+    "thinhit <thinhit@yahoo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate.css": "~3.3.0",
+    "bootstrap": "~3.3.0",
+    "font-awesome": "~4.4.0",
+    "simple-line-icons": "~0.1.1",
+    "angular": "~1.4.0",
+    "angular-ui-router": "~0.2.15",
+    "ng-facebook": "~0.1.6",
+    "angular-resource": "~1.4.1",
+    "angular-sanitize": "~1.4.1",
+    "angularjs-toaster": "~0.4.15",
+    "textAngular": "~1.4.2",
+    "ng-file-upload": "~5.0.9",
+    "angular-bootstrap": "~0.13.1",
+    "ng-tags-input": "~3.0.0",
+    "angular-moment": "~0.10.2"
+  }
+}

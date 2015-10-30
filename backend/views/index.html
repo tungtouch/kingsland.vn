@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="SemiColonWeb"/>
+
+    <!-- Stylesheets
+    ============================================= -->
+    <!--<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700"-->
+    <!--rel="stylesheet" type="text/css"/>-->
+    <link rel="shortcut icon" href="./fav.ico">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- One Page Module Specific Stylesheet -->
+    <link rel="stylesheet" href="css/onepage.css" type="text/css"/>
+    <!-- / -->
+
+    <link rel="stylesheet" href="css/dark.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css"/>
+
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
+
+    <link rel="stylesheet" href="css/responsive.css" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/cc_login.js"></script>
+    <script>
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(window.location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        if (getParameterByName('refer')) {
+            sessionStorage.setItem('refer_code', getParameterByName('refer'));
+        }
+        ;
+    </script>
+    <!-- Document Title
+    ============================================= -->
+    <title>KingsLand - Hệ thống chuỗi cho thuê Bất Động Sản</title>
+
+</head>
+
+<body class="stretched side-push-panel">
+
+<div class="body-overlay"></div>
+
+<div id="side-panel" class="dark">
+
+    <div id="side-panel-trigger-close"><a href="#"><i class="icon-line-cross"></i></a></div>
+
+    <div class="side-panel-wrap">
+
+        <div class="widget widget_links clearfix">
+
+            <h4>Đăng nhập</h4>
+
+            <div style="font-size: 14px; line-height: 1.7;">
+                <form class="nobottommargin" id="template-contactform" name="template-contactform" action=""
+                      method="post" novalidate="novalidate" onsubmit="return false">
+
+                    <div class="form-process"></div>
+
+
+                    <div class="col_full">
+                        <input type="email" id="login_email" name="template-contactform-email" value=""
+                               class="required email sm-form-control border-form-control" placeholder="Số điện thoại"
+                               aria-required="true">
+                    </div>
+
+                    <div class="col_full">
+                        <input type="password" id="login_password" name="template-contactform-password" value=""
+                               class="required sm-form-control border-form-control" placeholder="Mật khẩu"
+                               aria-required="true">
+                    </div>
+                    <a href="http://www.sales1.vn/users/siteforgotpassword">
+                        <small style="display: block; font-size: 13px; margin-top: 15px; color: #ccc">Không thể đăng
+                            nhập?
+                        </small>
+                    </a>
+
+                    <div class="col_full center">
+                        <button class="button button-border button-circle t500 noleftmargin topmargin-sm" type="submit"
+                                id="login_cc" name="template-contactform-submit" value="submit">Đăng nhập
+                        </button>
+                        <br>
+
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <div class="col_full hidden">
+                        <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck"
+                               value="" class="sm-form-control">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+        <div class="widget quick-contact-widget clearfix">
+
+            <h4>Kết nối mạng xã hội</h4>
+
+            <a href="http://www.facebook.com/collaboratecloud" class="social-icon si-small si-colored si-facebook"
+               title="Facebook">
+                <i class="icon-facebook"></i>
+                <i class="icon-facebook"></i>
+            </a>
+            <a href="http://www.twitter.com/collab_cloud" class="social-icon si-small si-colored si-twitter"
+               title="Twitter">
+                <i class="icon-twitter"></i>
+                <i class="icon-twitter"></i>
+            </a>
+
+            <a href="#" class="social-icon si-small si-colored si-linkedin" title="LinkedIn">
+                <i class="icon-linkedin"></i>
+                <i class="icon-linkedin"></i>
+            </a>
+            <a href="#" class="social-icon si-small si-colored si-gplus" title="Google Plus">
+                <i class="icon-gplus"></i>
+                <i class="icon-gplus"></i>
+            </a>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+    <!-- Header
+============================================= -->
+    <header id="header" class="full-header transparent-header dark  static-sticky" data-sticky-class="not-dark"
+            data-sticky-offset="full" data-sticky-offset-negative="100">
+
+        <div id="header-wrap">
+
+            <div class="container clearfix">
+
+                <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                <!-- Logo
+                ============================================= -->
+                <div id="logo">
+                    <a href="./index.html" class="standard-logo"
+                       data-dark-logo="./images/kingsland-white-logo.png"><img
+                            src="./images/kingsland-red-logo.png" alt="Canvas Logo"></a>
+                    <a href="./index.html" class="retina-logo"
+                       data-dark-logo="./images/kingsland-white-logo@2x.png"><img
+                            src="./images/kingsland-red-logo@2x.png"
+                            alt="Canvas Logo"></a>
+                </div>
+                <!-- #logo end -->
+
+                <!-- Primary Navigation
+                ============================================= -->
+                <nav id="primary-menu">
+
+                    <ul>
+                        <li><a href="./index.html">
+                            <div>Trang chủ</div>
+                        </a></li>
+                        <li><a href="./invester.html">
+                            <div>Đầu tư</div>
+                        </a>
+                        </li>
+                        <li><a href="./tuyen-dung.html">
+                            <div>Tuyển dụng <b class="badge tuyendung">5</b></div>
+                        </a></li>
+                        <li><a href="/system/#/dang-ky">
+                            <button class="button button-border button-circle t500 noleftmargin requestdemobtn"
+                                    type="submit" id="template-contactform-submit" name="template-contactform-submit"
+                                    value="submit">Đăng nhập
+                            </button>
+                        </a></li>
+                    </ul>
+
+                    <!--                     <div id="side-panel-trigger"><a href="/system/#/dang-nhap"><i class="icon-lock"></i></a></div>
+                     -->
+                </nav>
+                <!-- #primary-menu end -->
+
+            </div>
+
+        </div>
+
+    </header>
+    <!-- #header end -->
+
+
+    <!-- Slider
+        ============================================= -->
+    <section id="slider" class="slider-parallax full-screen force-full-screen">
+
+        <div class="full-screen force-full-screen dark section nopadding nomargin noborder ohidden"
+             style="background-image: url('./images/page/slider-1.jpg'); background-size: cover; background-position: center center;">
+
+            <div class="container center">
+                <div class="vertical-middle ignore-header">
+                    <div class="emphasis-title" style="margin: 0 0 10px">
+                        <h1>
+								<span class="text-rotater nocolor" data-separator="|" data-rotate="fadeIn"
+                                      data-speed="6000">
+									 thuê <span class="t-rotate t300 font-body opm-word">nhà ở|văn phòng|mặt bằng|phòng ở</span>
+								</span>
+
+                        </h1>
+                        <span data-caption-animate="fadeInUp" data-caption-delay="200"
+                              style="text-shadow: 1px 0px 1px #000;" class="fadeInUp animated lead">
+                            Hệ thống cho thuê <strong>miễn phí</strong> - <strong>nhanh chóng</strong> - <strong>chuyên
+                            nghiệp</strong><br>Chúng tôi đã sẵn sàng phục vụ bạn!</span>
+                    </div>
+                    <!--<div class="request-form row">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="email" id="hoten" name="template-contactform-email" value=""
+                                       class="form-control" placeholder="Nhập tên của bạn"
+                                       aria-required="true">
+                                <input type="email" name="template-contactform-email" value=""
+                                       class="form-control" placeholder="Số điện thoại"
+                                       aria-required="true">
+
+                                <button type="submit" class="btn btn-default">GỬI</button>
+                            </div>
+                        </form>
+                    </div>-->
+
+
+                    <a href="#" class="button button-border button-light button-circle" data-scrollto="#section-works"
+                       data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Tìm hiểu</a>
+                </div>
+            </div>
+
+            <div class="video-wrap">
+                <div class="video-overlay" style="background-color: rgba(0,0,0,0);"></div>
+            </div>
+
+            <a href="#" data-scrollto="#section-about" data-easing="easeInOutExpo" data-speed="1250" data-offset="65"
+               class="one-page-arrow dark"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+
+        </div>
+
+    </section>
+    <!-- #slider end -->
+
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap nopadding" style="background: #f5f5f5;">
+
+            <div id="section-about" class="center page-section  nobottompadding">
+                <div class="container clearfix">
+                    <div class="col-xs-12 col-md-4 col-lg-3">
+                        <a href="#" class="thumbnail">
+                            <img src="./house/1_1445328144.jpg" alt="...">
+                            <span class="price">5.5tr/tháng</span>
+                            <div class="caption">
+                                <h5><span class="label label-success">CĂN HỘ</span> Căn hộ, Chung cư số 6 ngõ 48/55 Hoàng Hoa Thám - Ba Đình</h5>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="section-contact" class="page-section notoppadding nobottommargin" style="display: none;">
+
+
+                <div class="container clearfix">
+
+                    <div class="divcenter topmargin" style="max-width: 850px;">
+
+                        <div id="contact-form-result" data-notify-type="success"
+                             data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
+
+                        <form class="nobottommargin" id="template-contactform1" name="template-contactform1"
+                              action="http://www.kingsland.vn/sendemail"
+                              method="post">
+
+                            <div class="form-process"></div>
+
+                            <div class="col_half">
+                                <input type="text" id="template-contactform-name" name="template-contactform-name"
+                                       value="" class="sm-form-control border-form-control required" placeholder="Name">
+                            </div>
+                            <div class="col_half col_last">
+                                <input type="email" id="template-contactform-email" name="template-contactform-email"
+                                       value="" class="required email sm-form-control border-form-control"
+                                       placeholder="Email Address">
+                            </div>
+
+                            <div class="clear"></div>
+
+                            <div class="col_one_third">
+                                <input type="text" id="template-contactform-phone" name="template-contactform-phone"
+                                       value="" class="sm-form-control border-form-control" placeholder="Phone">
+                            </div>
+
+                            <div class="col_two_third col_last">
+                                <input type="text" id="template-contactform-company" name="template-contactform-company"
+                                       value="" class="required sm-form-control border-form-control"
+                                       placeholder="Company">
+                            </div>
+
+                            <div class="clear"></div>
+
+                            <div class="col_full">
+                                <textarea class="required sm-form-control border-form-control"
+                                          id="template-contactform-message" name="template-contactform-message" rows="7"
+                                          cols="30"
+                                          placeholder="What business problem are you looking to solve?"></textarea>
+                            </div>
+
+                            <div class="col_full center">
+                                <button class="button button-border button-circle t500 noleftmargin topmargin-sm"
+                                        type="submit" id="template-contactform-submit1"
+                                        name="template-contactform-submit" value="submit">Request Demo
+                                </button>
+                                <br>
+                                <small style="display: block; font-size: 13px; margin-top: 15px;">We'll do our best to
+                                    get back to you within 12-24 working hours.
+                                </small>
+                            </div>
+
+                            <div class="clear"></div>
+
+                            <div class="col_full hidden">
+                                <input type="text" id="template-contactform-botcheck2"
+                                       name="template-contactform-botcheck" value="" class="sm-form-control">
+                            </div>
+
+                        </form>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- #content end -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#template-contactform1").validate({
+                submitHandler: function (form) {
+                    $('.form-process').fadeIn();
+                    $(form).ajaxSubmit({
+                        target: '#contact-form-result',
+                        success: function () {
+                            $('.form-process').fadeOut();
+                            $(form).find('.sm-form-control').val('');
+                            $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
+                            SEMICOLON.widget.notifications($('#contact-form-result'));
+                        }
+                    });
+                }
+
+            });
+
+            //$('#section-contact').hide();
+            $('#free-demo').click(function () {
+                $('#section-contact').show();
+                $('#template-contactform-name').focus();
+            })
+
+            $('.learnmore').click(function () {
+                $('#section-contact').show();
+                $('#template-contactform-name').focus();
+            })
+
+        })
+    </script>
+
+
+    <!-- Footer
+    ============================================= -->
+    <div id="footer" class="dark noborder">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container footer-links">
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <h4>Kingsland.vn</h4>
+                        <ul>
+                            <li>
+                                <a href="/ve-chung-toi.html">Giới thiệu Kingsland</a>
+                            </li>
+                            <li>
+                                <a href="/tin-tuc.html">Tin tức</a>
+                            </li>
+                            <li>
+                                <a href="/chinh-sach-bao-mat.html">Chính sách bảo mật</a>
+                            </li>
+                            <li>
+                                <a href="/quy-dinh-dieu-khoan.html">Quy định & Điều khoản</a>
+                            </li>
+                            <li>
+                                <a href="/tuyen-dung.html">Tuyển dụng</a>
+                            </li>
+                            <li>
+                                <a href="/lien-he.html">Liên hệ</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <h4>Về chúng tôi</h4>
+                        <ul>
+                            <li>
+                                <a href="/tam-nhin-va-gia-tri-cot-loi.html">Tầm nhìn và giá trị cốt lõi</a>
+                            </li>
+                            <li>
+                                <a href="/lich-su-van-hoa.html">Lịch sử - Văn hóa</a>
+                            </li>
+                            <li>
+                                <a href="/doi-ngu-lanh-dao.html">Đội ngũ Lãnh đạo</a>
+                            </li>
+                            <li>
+                                <a href="/trach-nhiem-xa-hoi.html">Trách nhiệm xã hội</a>
+                            </li>
+                            <li>
+                                <a href="/hoat-dong-su-kien.html ">Hoạt động sự kiện</a>
+                            </li>
+                            <li>
+                                <a href="/thuong-hieu.html">Thương hiệu</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 col-md-3 hidden-xs">
+                        <h4>Dịch vụ</h4>
+                        <ul>
+                            <li>
+                                <a href="/dang-ky-ten-mien.html">Thuê văn phòng</a>
+                            </li>
+                            <li>
+                                <a href="/ten-mien-mien-phi.html">Thuê nhà - phòng ở</a>
+                            </li>
+                            <li>
+                                <a href="/dich-vu-email-doanh-nghiep.html">Thuê mặt bằng kinh doanh</a>
+                            </li>
+                            <li>
+                                <a href="/dich-vu-quang-cao-google-adwords.html">Giải pháp kinh doanh chuỗi</a>
+                            </li>
+                            <li>
+                                <a href="/phan-mem-quan-ly-ban-hang.html">Ký gửi Bất động sản</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <h4>Hợp tác</h4>
+                        <ul>
+                            <li>
+                                <a href="/tro-thanh-nha-dau-tu">Trở thành nhà đầu tư</a>
+                            </li>
+                            <li>
+                                <a href="/tro-thanh-doi-tac">Trở thành đối tác</a>
+                            </li>
+                            <li>
+                                <a href="/affiliate">Chương trình affiliate</a>
+                            </li>
+                            <li>
+                                <a href="/cong-tac-vien">Chương trình cộng tác viên</a>
+                            </li>
+                            <li>
+                                <a href="/chuong-trinh-startup">Chương trình "Khởi nghiệp"</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 visible-xs">
+                        <h4>Trợ giúp</h4>
+                        <ul>
+                            <li>
+                                <a href="/tro-giup-tren-facebook">Trợ giúp trên Facebook</a>
+                            </li>
+                            <li>
+                                <a href="/kien-thuc-bat-dong-san">Kiến thức Bất động sản</a>
+                            </li>
+                            <li>
+                                <a href="/hinh-thuc-thanh-toan">Hình thức thanh toán</a>
+                            </li>
+                            <li>
+                                <a href="/quy-trinh-tuyen-dung">Quy trình tuyển dụng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <hr class="line-gray">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container footer-contact">
+                    <div class="col-sm-3 col-md-3 hidden-xs">
+                        <h4>Trợ giúp</h4>
+                        <ul>
+                            <li>
+                                <a href="/tro-giup-tren-facebook">Trợ giúp trên Facebook</a>
+                            </li>
+                            <li>
+                                <a href="/kien-thuc-bat-dong-san">Kiến thức Bất động sản</a>
+                            </li>
+                            <li>
+                                <a href="/hinh-thuc-thanh-toan">Hình thức thanh toán</a>
+                            </li>
+                            <li>
+                                <a href="/quy-trinh-tuyen-dung">Quy trình tuyển dụng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-9 col-md-9">
+                        <h4>
+                            Liên hệ
+
+                        </h4>
+                        <strong class="uppercase">Công ty cổ phần đầu tư KingsLand</strong>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <span>Trụ sở</span>
+                                <ul>
+                                    <li class="address">
+                                        <span class="text-infos"><i class="fa fa-map-marker"></i>Số 3/39 Đông Tác - Đống Đa - Hà Nội</span>
+                                    </li>
+                                    <li class="phone">
+                                        <span class="text-infos"><i class="fa fa-mobile"></i>0986345028 - <i class="fa fa-mobile"></i>0986667474</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <span>Chi nhánh</span>
+                                <ul>
+                                    <li class="address">
+                                        <span class="text-infos"><i class="fa fa-map-marker"></i>Số 396 Bùi Xương Trạch - Hoàng Mai - Hà Nội.</span>
+                                    </li>
+                                    <li class="phone">
+                                        <span class="text-infos"><i class="fa fa-mobile"></i>0986345028 - <i class="fa fa-mobile"></i>0986667474</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <span class="padding-sm-right">Hỗ trợ ngoài giờ HC &amp; Thứ 7, Chủ nhật:</span>
+                        <span class="text-infos"><i class="fa fa-mobile"></i>0986345028 <i class="fa fa-envelope"></i>hotro@kingsland.vn</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row copyrights" id="copyrights">
+                <div class="container">
+                    <div class="col-xs-12 col-sm-3 col-md-3">
+                        <span>© Copyright 2015</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-9 col-md-9">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <span>KingsLand.vn - Giải pháp cho thuê Số 1 Việt nam</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- #footer end -->
+
+</div>
+<!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- Footer Scripts
+============================================= -->
+<script type="text/javascript" src="./js/functions.js"></script>
+<script type="text/javascript" src="http://a.disquscdn.com/embed.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<div class="col-md-2 disable-mobile right-sidebar">
+    <div class="padder m-t-sm">
+        <form>
+            <div class="form-group">
+                <label for="ProjectName">Tên dự án</label>
+                <input type="text" class="form-control" id="ProjectName" placeholder="Nhập tên dự án cần tìm" ng-model="frm.title">
+            </div>
+            <div class="form-group">
+                <label>Hoa hồng</label>
+                <select name="" id="" class="form-control" ng-model="frm.tip_sort">
+                    <option value="">Lọc theo hoa hồng</option>
+                    <option value="ASC">Tăng dần</option>
+                    <option value="DESC">Giảm dần</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Trạng thái</label>
+                <select name="" id="" class="form-control" ng-model="frm.project_status">
+                    <option value="">Lọc theo trạng thái</option>
+                    <option ng-repeat="(key, item) in project_status" value="{{key}}">{{item}}</option>
+
+                </select>
+            </div>
+            <!-- <div class="form-group">
+                <label>Loại dự án</label>
+                <select name="" id="" class="form-control" ng-model="frm.project_type">
+                    <option value="">Lọc theo loại dự án</option>
+                    <option value="1">Thuê nhà, phòng</option>
+                    <option value="2">Mua nhà</option>
+                </select>
+            </div> -->
+
+            <div class="form-group">
+                <label>Loại hoa hồng</label>
+                <select name="" id="" class="form-control" ng-model="frm.discount_type">
+                    <option value="">Lọc theo loại hoa hồng</option>
+                    <option value="1">Theo phần trăm dự án</option>
+                    <option value="2">Theo số tiền cố định</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Tỉnh thành</label>
+                <select name="city" class="form-control m-b" ng-model="frm.city" ng-change="loadDistrict(frm.city)" > 
+                    <option value="">Chọn Tỉnh/TP</option>
+                    <option ng-repeat="item in list_city" value="{{item.id}}">{{item.city_name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Quận huyện</label>
+                <select name="district" class="form-control m-b" ng-model="frm.district" >
+                    <option value="">Chọn Quận/huyện</option>
+                    <option ng-repeat="item in list_district" value="{{item.id}}">{{item.district_name}}</option>
+                </select>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" ng-click="load(frm)" ng-disabled="loadingData">Tìm kiếm</button>
+        </form>
+    </div>
+</div>

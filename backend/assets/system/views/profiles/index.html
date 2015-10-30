@@ -1,0 +1,90 @@
+<div class="col-md-10 main-content">
+    <div class="clearfix"></div>
+
+    <div class="main-questions-list m-t-sm">
+        <div class="padder">
+            <form name="frmUser" ng-submit="save()" role="form"
+                  class="form-horizontal form-validation ng-pristine ng-valid ng-valid-required">
+                <div class="panel panel-default">
+                    <div class="panel-heading font-bold">Hồ sơ cá nhân</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-3 col-md-3 col-lg-2 control-label">Họ tên</label>
+
+                            <div class="col-sm-6 col-md-6 col-lg-5">
+                                <input type="text" class="form-control ng-pristine ng-valid"
+                                       ng-model="user_info.fullname" readonly="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-md-3 col-lg-2 control-label">Chức vụ</label>
+
+                            <div class="col-sm-6 col-md-6 col-lg-5">
+                                <input ng-model="privilige" type="text"
+                                       class="form-control ng-pristine ng-valid" readonly="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-md-3 col-lg-2 control-label">Email</label>
+
+                            <div class="col-sm-6 col-md-6 col-lg-5">
+                                <input ng-model="user_info.email" type="email"
+                                       class="form-control ng-pristine ng-valid ng-valid-email" readonly="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-md-3 col-lg-2 control-label">Điện thoại</label>
+
+                            <div class="col-sm-6 col-md-6 col-lg-5">
+                                <input type="tel" ng-model="user_info.phone" ng-pattern="/^0[1-9][\d]{6,13}$/"
+                                       class="form-control ng-scope ng-pristine ng-valid ng-valid-pattern" tour-step=""
+                                       order="1" title="Điện thoại" content="Hãy nhập số điện thoại của bạn." readonly="">
+                            </div>
+                        </div>
+
+                       <!-- <div class="form-group">
+                            <label class="col-sm-3 col-md-3 col-lg-2 control-label">Số tiền khả dụng</label>
+
+                            <div class="col-sm-6 col-md-6 col-lg-5">
+                                <input value="{{user_info.blance || 0 | vnNumber }} vnđ" type="text"
+                                       class="form-control ng-pristine ng-valid ng-valid-email" readonly="">
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+                <!--/ panel-->
+            </form>
+        </div>
+    </div>
+
+
+    <!-- <div class="panel panel-default">
+        <div class="panel-heading font-bold">Đổi mật khẩu</div>
+        <div class="panel-body">
+                <div class="form-group ng-scope" tour-step="" order="3" title="Mật khẩu" content="Nếu bạn muốn đổi mật khẩu !." placement="top">
+                    <label class="col-sm-3 col-md-3 col-lg-2 control-label">Mật khẩu hiện tại</label>
+                    <div class="col-sm-6 col-md-6 col-lg-5">
+                        <input ng-model="user_info.password_current" type="password" class="form-control ng-pristine ng-valid" placeholder="Nhập mật khẩu đang sử dụng">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-md-3 col-lg-2 control-label">Mật khẩu mới</label>
+                    <div class="col-sm-6 col-md-6 col-lg-5">
+                        <input ng-model="user_info.password_new" name="password_new" type="password" class="form-control ng-pristine ng-valid" placeholder="Nhập mật khẩu mới">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-md-3 col-lg-2 control-label" style="padding-left: 4px;">Nhập lại mật khẩu mới</label>
+                    <div class="col-sm-6 col-md-6 col-lg-5">
+                        <input ng-model="user_info.password_verify"  type="password" class="form-control " placeholder="Nhập lại mật khẩu mới">
+                    </div>
+                </div>
+                <div ng-show="(user_info.password_verify && user_info.password_new) && user_info.password_verify !== user_info.password_new" class="ng-hide">Mật khẩu mới không khớp !</div>
+        </div>
+    </div> / Panel
+    <button ng-disabled="frmUser.$invalid || isUnchanged() || fsubmit" type="submit" class="btn btn-success ng-scope" tour-step="" order="4" content="Sau khi thay đổi các thông tin , hãy bấm vào đây để lưu thay đổi" placement="top" on-next="onTourEnd()" disabled="disabled" on-click="alert('Chức năng đang được cập nhật')">Cập nhật</button> -->
+    </form>
+</div>
+</div>
+
+</div>

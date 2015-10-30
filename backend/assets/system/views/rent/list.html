@@ -1,0 +1,91 @@
+<div class="clearfix"></div>
+<div class="col-md-10">
+    <div class="row select-category">
+        <div class="col-md-6 col-xs-12 current-category">
+            <span>Danh sách cho thuê</span>
+        </div>
+        
+        <div class="col-md-6 col-xs-6" ng-if="user.user.privilige == 2">
+            <a ui-sref="app.projects.create">
+            <button class="btn btn-primary pull-right" style="margin-top:20px">TẠO DỰ ÁN</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- <div class="row question-filter" id="question_filter">
+    
+        <div class="col-md-6 col-xs-6 col-md-offset-6">
+            <div class="number-of-questions-wrapper">
+                <span class="number-of-questions-text">Số bản ghi mỗi trang:</span>
+    
+                <div class="number-of-questions">
+                    <select id="filter-numbers" class="select-grey-bg">
+                        <option value="">20</option>
+                        <option value="">15</option>
+                        <option value="" selected>10</option>
+                        <option value="">5</option>
+                    </select>
+                </div>
+    
+            </div>
+        </div>
+    </div> -->
+    <!-- END QUESTIONS-FILTER -->
+    <div class="main-questions-list">
+        <div class="table-responsive">
+            <table class="table table-border table-hover">
+                <tr>
+                    <th>#</th>
+                    <th>Tên dự án</th>
+                    <th>Thông tin dự án</th>
+                    <th>Chính sách</th>
+                </tr>
+
+                <tr style="cursor: pointer" ng-repeat="item in list_projects" ui-sref="app.projects.view({ id: item.id })">
+                    <td>
+                        {{$index + 1}}
+                    </td>
+
+                    <td>
+                        <p><strong>{{item.title}}</strong></p>
+                    </td>
+
+                    <td>
+                        <p><strong>Chủ đầu tư : </strong> {{item.contractor}} <br/></p>
+                        <p><strong>Địa chỉ : </strong> {{item.address}}, {{item.district.district_name}}, {{item.city.city_name}}  <br/></p>
+                        <p><strong>Giá gốc/m<sup>2</sup> </strong> : {{item.amount | vnNumber}} vnđ</p>
+                        <p><strong>Tình trạng </strong> : <label class="label label-success">Đã xây dựng xong</label></p>
+                    </td>
+                    <td>
+                        <p><strong>Kiểu hoa hồng</strong> : {{item.discount_type == 1 ? 'Theo % căn hộ' : 'Cố định tiền'}} </p>
+                        <p ng-if="item.discount_type == 1"><strong>Tổng % hoa hồng </strong> : {{item.discount_amount}}%/căn hộ</p>
+                        <p ng-if="item.discount_type == 2"><strong>Tổng tiền hoa hồng </strong> : {{item.discount_amount | vnNumber}} vnđ/căn hộ</p>
+                        <p><strong>Giới thiệu </strong> : <span ng-if="item.tip_type == 2">{{item.tip_invite | vnNumber}} vnđ</span> 
+                            <label ng-if="item.tip_type == 1" class="label label-success">{{item.tip_invite}}%</label>
+                        </p>
+                        <p><strong>Chốt được khách </strong> : <span ng-if="item.tip_type == 2">{{item.tip_contract | vnNumber}} vnđ</span>
+                            <label class="label label-success" ng-if="item.tip_type == 1">{{item.tip_contract}}%</label>
+                        </p>
+
+                    </td>
+                </tr>
+            </table>
+            <div class="col-md-12 text-center" ng-if="loadingData">
+                Đang tải dữ liệu
+            </div>
+        </div>
+
+
+    </div>
+    <!-- END MAIN-QUESTIONS-LIST -->
+    <div class="row home">
+    <div class="col-md-12 text-right">
+        <pagination total-items="total" ng-model="currentPage" max-size="item_page" class="pagination-sm"
+                    boundary-links="true" rotate="false" ng-click="load()" first-text="Trang đầu" next-text="Tiếp theo" last-text="Trang cuối" previous-text="Sau"></pagination>
+    </div>
+    </div>
+</div>
+
+<div ng-include="'views/projects/right-sidebar.html'"></div>
+<!-- END MAIN-PAGINATIONS -->
+<div class="clearfix"></div>

@@ -1,0 +1,118 @@
+<div class="sampleClass"></div>
+<div ng-include="'views/partials/mobile-nav.html'"></div>
+
+<div class="container-fluid" style="height: 100%; position:relative; bottom: 0">
+    <toaster-container toaster-options="
+    {'close-button':{ 'toast-warning': true, 'toast-error': false } }">
+</toaster-container>
+    <div class="row">
+        <div ng-include="'views/partials/header.html'"></div>
+
+        <!-- END HEADER -->
+        <div class="col-md-12 col-xs-12" id="header_sidebar">
+
+        </div>
+        
+        <div ng-include="'views/partials/left-sidebar.html'"></div>
+        <!-- END LEFT-SIDEBAR -->    
+
+        <div class="" ui-view>
+                
+        </div>
+
+        <!-- END RIGHT-SIDEBAR -->
+    </div>
+    <!-- END ROW -->
+</div>
+<!-- END CONTAINER-FLUID -->
+
+
+
+
+<div style="display:none;">
+    <div id="wp-temp_id-wrap" class="wp-core-ui wp-editor-wrap html-active">
+        <!--<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css?ver=4.2.2' type='text/css' media='all' />-->
+        <!--<link rel='stylesheet' id='editor-buttons-css'  href='wp-includes/css/editor.min.css?ver=4.2.2' type='text/css' media='all' />-->
+        <div id="wp-temp_id-editor-container" class="wp-editor-container"><textarea class="wp-editor-area" rows="20" tabindex="5" cols="40" name="post_content" id="temp_id"></textarea></div>
+    </div>
+</div>
+<!-- MODAL LOGIN / REGISTER -->
+<div class="modal fade modal-submit-questions" id="login_register" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+                <h4 class="modal-title modal-title-sign-in" id="myModalLabel">Đăng Nhập</h4>
+            </div>
+            <div class="modal-body">
+                <form id="signin_form" class="form_modal_style">
+                    <label for="username">
+                    Tên người dùng hoặc email                   </label>
+                    <input type="text" class="email_user"  name="username" id="username" />
+                    <label for="password">
+                    Mật khẩu                    </label>
+                    <input type="password" class="password_user" id="password" name="password">
+                    <a href="javascript:void(0)" class="link_forgot_pass">Quên mật khẩu</a>
+                    <div class="clearfix"></div>
+                    <input type="submit" name="submit" value="Đăng nhập" class="btn-submit">
+                    <a href="javascript:void(0)" class="link_sign_up">Đăng ký</a>
+                    <ul class="social-icon clearfix">
+                        <!-- google plus login -->
+                        <!-- twitter plus login -->
+                        <!-- facebook plus login -->
+                    </ul>
+                </form>
+                <form id="signup_form" class="form_modal_style">
+                    <label for="username">
+                    Tên đăng nhập                   </label>
+                    <input type="text" class="name_user" name="username" id="username" />
+                    <label for="email">
+                    Email                   </label>
+                    <input type="text" class="email_user" name="email" id="email" />
+                    <label for="password1">
+                    Mật khẩu                    </label>
+                    <input type="password" class="password_user_signup" id="password1" name="password" />
+                    <label for="re_password">
+                    Nhập Lại Mật Khẩu                   </label>
+                    <input type="password" class="repeat_password_user_signup" id="re_password" name="re_password" />
+                    <div class="clearfix"></div>
+                    <div class="gg-captcha">
+                    </div>
+                    <input type="submit" name="submit" value="Đăng ký" class="btn-submit">
+                    <a href="javascript:void(0)" class="link_sign_in">Đăng nhập</a>
+                    <div class="clearfix"></div>
+                    <p class="policy-sign-up">
+                        Bằng cách nhấn vào "Đăng lên" bạn chỉ ra rằng bạn đã đọc và đồng ý với chính sách bảo mật </a> <a target="_blank" href="quy-dinh-va-noi-quy/index.html"> và <a target = "_ blank" href = "quy-dinh-va-noi-quy/index.html" > điều khoản chúng tôi. </a>                  
+                    </p>
+                </form>
+                <form id="forgotpass_form" class="form_modal_style collapse">
+                    <label>Nhập email của bạn ở đây</label>
+                    <input type="text" class="name_user" name="email" id="email" />
+                    <input type="submit" name="submit" value="Gửi" class="btn-submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL LOGIN / REGISTER -->
+<!-- MODAL RESET PASSWORD -->
+<div class="modal fade modal-submit-questions" id="reset_password" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+                <h4 class="modal-title modal-title-sign-in" id="myModalLabel">Đặt Lại Mật Khẩu</h4>
+            </div>
+            <div class="modal-body">
+                <form id="resetpass_form" class="form_modal_style">
+                    <input type="hidden" id="user_login" name="user_login" value="" />
+                    <input type="hidden" id="user_key" name="user_key" value="">                
+                    <label>Nhập mật khẩu mới của bạn ở đây</label>
+                    <input type="password" class="name_user" name="new_password" id="new_password" />
+                    <input type="password" class="name_user" name="re_new_password" id="re_new_password" />
+                    <input type="submit" name="submit" value="Thiết lập lại" class="btn-submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

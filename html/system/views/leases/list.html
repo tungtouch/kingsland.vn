@@ -1,0 +1,90 @@
+<div class="clearfix"></div>
+<div class="col-md-10">
+    <div class="row select-category">
+        <div class="col-md-6 col-xs-12 current-category">
+            <span>Danh sách dự án</span>
+        </div>
+        
+        <div class="col-md-6 col-xs-6" ng-if="user.user.privilige == 2">
+            <a ui-sref="app.leases.create">
+            <button class="btn btn-primary pull-right" style="margin-top:20px">TẠO DỰ ÁN</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- <div class="row question-filter" id="question_filter">
+    
+        <div class="col-md-6 col-xs-6 col-md-offset-6">
+            <div class="number-of-questions-wrapper">
+                <span class="number-of-questions-text">Số bản ghi mỗi trang:</span>
+    
+                <div class="number-of-questions">
+                    <select id="filter-numbers" class="select-grey-bg">
+                        <option value="">20</option>
+                        <option value="">15</option>
+                        <option value="" selected>10</option>
+                        <option value="">5</option>
+                    </select>
+                </div>
+    
+            </div>
+        </div>
+    </div> -->
+    <!-- END QUESTIONS-FILTER -->
+    <div class="main-questions-list">
+        <div class="table-responsive">
+            <table class="table table-border table-hover">
+                <tr>
+                    <th>#</th>
+                    <th>Chủ nhà</th>
+                    <th>Thông tin</th>
+                    <th>Loại nhà</th>
+                    <th>Phù hợp</th>
+                    <th>Tình trạng</th>
+                </tr>
+
+                <tr style="cursor: pointer" ng-repeat="item in list_leases" ui-sref="app.leases.view({ id: item.id })">
+                    <td>
+                        {{$index + 1}}
+                    </td>
+
+                    <td>
+                        <p><strong><i ng-if="item.company_hire == true" class="fa fa-star" style="color: yellowgreen; margin-right: 3px;"></i> {{item.owner}}</strong></p>
+                        <p ng-if="privilige == 3 || privilige == 1 || privilige == 4"><i class="fa fa-phone"></i> {{item.phone}}</p>
+                    </td>
+
+                    <td>
+                        <p><span ng-if="privilige == 3 || privilige == 1 || privilige == 4">{{data.house_number}} </span>{{item.address}} - {{item.dist}}</p>
+                        <p><i class="fa fa-home"></i> <label class="label label-success">{{item.amount | currency:"":0 }}đ</label> <i class="fa fa-money" style="margin-left:5px;"></i> <label class="label label-success">{{item.number_tip | currency:"":0}}đ</label></p>
+
+                    </td>
+                    <td>
+                        <label class="label label-info" style="margin-right:5px;" ng-repeat="item in item.for_lease" ng-if="item != false">{{item}}</label>
+                    </td>
+                    <td>
+                        <label class="label label-primary" style="margin-right:5px;" ng-repeat="item in item.type_lease" ng-if="item != false">{{item}}</label>
+                    </td>
+                    <td>
+                        <label class="label label-primary" style="margin-right:5px;">{{item.status}}</label>
+                    </td>
+                </tr>
+            </table>
+            <div class="col-md-12 text-center" ng-if="loadingData">
+                Đang tải dữ liệu
+            </div>
+        </div>
+
+
+    </div>
+    <!-- END MAIN-QUESTIONS-LIST -->
+    <div class="row home">
+    <div class="col-md-12 text-right">
+        <pagination total-items="total" ng-model="currentPage" max-size="item_page" class="pagination-sm"
+                    boundary-links="true" rotate="false" ng-click="load()" first-text="Trang đầu" next-text="Tiếp theo" last-text="Trang cuối" previous-text="Sau"></pagination>
+    </div>
+    </div>
+</div>
+
+<div ng-include="'views/projects/right-sidebar.html'"></div>
+<!-- END MAIN-PAGINATIONS -->
+<div class="clearfix"></div>

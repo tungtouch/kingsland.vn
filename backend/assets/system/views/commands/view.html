@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-md-10">
+        <div class="blog-classic-top">
+
+            <div class="col-xs-12">
+                <h2 style="width: 100%">
+                    <span class="pull-left">{{data.customer[0].fullname}}</span>
+                    <!--<span class="pull-right"><button type="button" ui-sref="app.commands.update({ id: data.id })" class="btn btn-primary">Sửa</button></span>-->
+                </h2>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Giá thuê:</strong> {{data.amount_range_min}}đ - {{data.amount_range_max}}đ</p>
+                    <p><strong>Diện tích:</strong> {{data.area_range_min}}m - {{data.area_range_max}}m</p>
+                    <p><strong>Yêu cầu thêm:</strong></p>
+                    <p>{{data.notes}}</p>
+
+                </div>
+                <div class="col-md-6">
+                    <p ng-if="privilige == 2 || privilige == 1"><strong>Số điện thoại :</strong> {{data.customer[0].phone}}</p>
+                    <p><strong>Hình thức:</strong> <label class="label label-primary" style="margin-right:5px;" ng-repeat="item in data.type_lease" ng-if="item != false">{{item}}</label></p>
+                    <p><strong>Khu vực: </strong><label class="label label-success" style="margin-right:5px;" ng-repeat="item in data.dist_lease" ng-if="item != false">{{item}}</label></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-wrapper">
+            <div class="row">
+                <div class="col-md-12 col-xs-12" id="page_content">
+                    <div class="col-md-12">
+                        <h4>Các căn hộ phù hợp</h4>
+                    </div>
+                    <table class="table table-border table-hover">
+                        <tr>
+                            <th>#</th>
+                            <th style="width: 125px;">Ngày cập nhật</th>
+                            <th>Trạng thái</th>
+                            <th>Ghi chú</th>
+                        </tr>
+                        <tr ng-repeat="item in data.journey">
+                            <td>{{$index + 1}}</td>
+                            <td>{{item.createdAt | date:"HH:mm dd/MM/yyyy"}}</td>
+                            <td><label class="label label-{{commands_status[item.status].bg_color}}">{{commands_status[item.status].name}}</label></td>
+                            <td>{{item.note}}</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="col-md-12 col-xs-12" id="page_content">
+                    <div class="col-md-6">
+                        <h4>Lịch trình xử lý</h4>
+                    </div>
+                    <div class="col-md-2 text-right col-md-offset-4">
+                        <button type="button" class="button btn btn-success" ng-click="open_modal(data)" ng-if="user.user.privilige == 2">Cập nhật trạng thái</button>
+                    </div>
+                    <table class="table table-border table-hover">
+                        <tr>
+                            <th>#</th>
+                            <th style="width: 125px;">Ngày cập nhật</th>
+                            <th>Trạng thái</th>
+                            <th>Ghi chú</th>
+                        </tr>
+                        <tr ng-repeat="item in data.journey">
+                            <td>{{$index + 1}}</td>
+                            <td>{{item.createdAt | date:"HH:mm dd/MM/yyyy"}}</td>
+                            <td><label class="label label-{{commands_status[item.status].bg_color}}">{{commands_status[item.status].name}}</label></td>
+                            <td>{{item.note}}</td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-include="'views/partials/right-sidebar.html'"></div>
+</div>
+<div class="clearfix"></div>

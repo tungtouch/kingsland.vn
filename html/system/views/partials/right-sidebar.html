@@ -1,0 +1,21 @@
+<div class="col-md-2 disable-mobile right-sidebar">
+    <div class=" m-t-md">
+        <div class="widget widget-statistic">
+            <!-- <p class="questions-count">
+                Tổng số thành viên<br>
+                <span>1</span>
+            </p> -->
+            <p class="members-count">
+                Tổng giao dịch<br>
+                <span>{{transactions_statistic_total || 0}}</span>
+            </p>
+        </div>
+        <div class="widget widget-hot-questions">
+            <h3>GIAO DỊCH MỚI NHẤT</h3>
+            <ul>
+                <li ng-repeat="item in transactions_statistic" style="padding-bottom:10px;"><strong>{{item.user.fullname}}</strong> đã nhận được {{item.blance | vnNumber}} vnđ khi lệnh được xử lý thành công ! </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>

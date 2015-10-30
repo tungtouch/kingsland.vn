@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Socket.IO in sails testing page</title>
+</head>
+<script src="http://localhost:1337/js/dependencies/sails.io.js">
+	
+</script>
+<script>
+	// Socket server
+	io.sails.url = 'http://localhost:1337';
+	io.socket.request( {
+		method: 'get',
+		url: 	'/api/v1/drivers/updateLocation',
+		params: {device_id: 123, lat: 21.02776, lng: 105.83416},
+		headers: {
+			Authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlciI6IjU1NTE1OWNhZTIzMDU0YzQxYjM2YWFmNiIsIm5hbWUiOiJOZ3V54buFbiBWxINuIFRo4buLbmgiLCJlbWFpbCI6InRoaW5oaXRAeWFob28uY29tIiwicGhvbmUiOiIwMTYyNjYxNjgxNyIsInBhc3N3b3JkIjoiJDJhJDExJFVEdk84N3hEcGRjQ0lJV2tVNENNbE9DY01NSDIud2RuWVppNEZYYkguWFoxZWRENEZlOUxXIiwiZ2VuZGVyIjoibWFsZSIsInN0YXR1cyI6ImJ1c3kiLCJjcmVhdGVkQXQiOiIyMDE1LTA1LTEyVDE2OjU2OjM2Ljc0OVoiLCJ1cGRhdGVkQXQiOiIyMDE1LTA1LTE5VDIxOjMwOjIxLjUzOFoiLCJkZXZpY2VfaWQiOiIxMjMxMjMiLCJsb2NhdGlvbiI6WzIxLjAyNzc2LDEwNS44MzQxNl0sImlkIjoiNTU1MjMwYzQ2MGNjM2Q4ODE0MWVkYjE4IiwiaWF0IjoxNDMyMTMzODQ3LCJleHAiOjE0MzIyMjAyNDd9.g86DSMq0OQXhzTUkRbwiPfRxzlY6_f1IYVS5PvE8zv0'
+		}
+	}, function (data, jwres){
+  		console.log(data, jwres);
+	} )
+
+</script>
+<body>
+	
+</body>
+</html>

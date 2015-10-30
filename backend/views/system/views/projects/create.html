@@ -1,0 +1,222 @@
+<div class="clearfix"></div>
+<div class="row select-category">
+    <div class="col-md-6 col-xs-12 current-category">
+        <span>Tạo dự án</span>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="padder m-t-md">
+	<form class="form-horizontal" method="post" ng-submit="create(frm)">
+	    <div class="form-group">
+			<label class="col-sm-1 control-label ">Tên dự án</label>
+			<div class="col-sm-11">
+				<input type="text" class="form-control" ng-model="frm.title" required>
+			</div>
+	    </div>
+
+	    <div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label ">Trạng thái dự án</label>
+					<div class="col-sm-10">
+						<select name="project_status" class="form-control m-b" ng-model="frm.project_status"  required> 
+							<option value="">Chọn trạng thái</option>
+							<option ng-repeat="(key, item) in project_status" value="{{key}}">{{item}}</option>
+			            </select>
+					</div>
+			    </div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label ">Loại dự án</label>
+					<div class="col-sm-10">
+						<select name="project_type" class="form-control m-b" ng-model="frm.project_type" required>
+							<option value="">Chọn loại dự án</option>
+							<option value="1">Thuê nhà, phòng</option>
+                    		<option value="2">Mua nhà</option>
+			            </select>
+					</div>
+			    </div>
+			</div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label ">Tỉnh/TP</label>
+					<div class="col-sm-10">
+						<select name="city" class="form-control m-b" ng-model="frm.city" ng-change="loadDistrict(frm.city)" required>
+							<option value="">Chọn Tỉnh/TP</option>
+							<option ng-repeat="item in list_city" value="{{item.id}}">{{item.city_name}}</option>
+			            </select>
+					</div>
+			    </div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label ">Quận/huyện</label>
+					<div class="col-sm-10">
+						<select name="district" class="form-control m-b" ng-model="frm.district" required>
+							<option value="">Chọn Quận/huyện</option>
+							<option ng-repeat="item in list_district" value="{{item.id}}">{{item.district_name}}</option>
+			            </select>
+					</div>
+			    </div>
+			</div>
+		</div>
+	    
+	    <div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label ">Địa chỉ</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" ng-model="frm.address" required>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label ">Chủ đầu tư</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" ng-model="frm.contractor" required>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	    <div class="row">
+
+	    	<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label ">Trả cho KH</label>
+					<div class="col-sm-10">
+						<select name="district" class="form-control m-b"  ng-model="frm.tip_type" required>
+							<option value="1">Theo phần trăm</option>
+							<option value="2">Theo số tiền cố định</option>
+			            </select>
+					</div>
+			    </div>
+			</div>
+
+			
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label ">Loại offer</label>
+					<div class="col-sm-10">
+						<select name="district" class="form-control m-b"  ng-model="frm.discount_type" required>
+							<option value="1">Theo phần trăm dự án</option>
+							<option value="2">Theo số tiền cố định</option>
+			            </select>
+					</div>
+			    </div>
+			</div>
+<!-- 			
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Diện tích</label>
+				<div class="col-sm-10">
+					<div class="input-group m-b">
+		              <input type="text" class="form-control" ng-model="frm.area" required>
+		              <span class="input-group-addon">m<sup>2</sup></span>
+		            </div>
+				</div>
+		    </div>
+		</div>
+
+		 -->		</div>
+
+		<div class="row">
+			
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Đã chốt</label>
+					<div class="col-sm-10">
+						<div class="input-group m-b">
+			              <input type="text" class="form-control" ng-model="frm.tip_contract" formatnumber>
+			              <span class="input-group-addon">{{frm.tip_type == 1 ? '%': 'vnđ'}}</span>
+			            </div>
+					</div>
+			    </div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Offer</label>
+					<div class="col-sm-10">
+						<div class="input-group m-b">
+			              <input type="text" class="form-control" ng-model="frm.discount_amount" formatnumber>
+			              <span class="input-group-addon">{{frm.discount_type == 1 ? '%': 'vnđ'}}</span>
+			            </div>
+					</div>
+			    </div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Giới thiệu</label>
+					<div class="col-sm-10">
+						<div class="input-group m-b">
+			              <input type="text" class="form-control" ng-model="frm.tip_invite" formatnumber>
+			              <span class="input-group-addon">{{frm.tip_type == 1 ? '%': 'vnđ'}}</span>
+			            </div>
+					</div>
+			    </div>
+			</div>
+			
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-2 control-label ">Giá/m2</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" ng-model="frm.amount" required formatnumber>
+					</div>
+			    </div>
+			</div>
+		</div>
+
+
+
+	    <!-- <div class="form-group">
+	    			<label class="col-sm-1 control-label ">Hình ảnh</label>
+	    			<div class="col-sm-11">
+	    				<div ngf-drop ngf-select ng-model="files" class="drop-box"  style="border: 3px dotted #cdcdcd;padding: 15px;"
+	        ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true"
+	        accept="image/*,application/pdf">Drop pdfs or images here or click to upload</div>
+	    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+	    			</div>
+	    </div> -->
+
+	    <div class="form-group">
+			<label class="col-sm-1 control-label ">Nội dung</label>
+			<div class="col-sm-11">
+				<text-angular ng-model="frm.content"></text-angular>
+			</div>
+	    </div>
+
+	    <div class="form-group">
+			<label class="col-sm-1 control-label ">&nbsp;</label>
+			<div class="col-sm-11">
+				<button class="btn btn-primary" type="submit" ng-disabled="submit_btn">Đăng dự án</button>
+			</div>
+	    </div>
+	</form>	
+
+</div>
+
+
+
+
+
+
+<!-- END MAIN-QUESTIONS-LIST -->
+<div class="row paginations home">
+    <div class="col-md-12">
+    </div>
+</div>
+<!-- END MAIN-PAGINATIONS -->
+<div class="clearfix"></div>

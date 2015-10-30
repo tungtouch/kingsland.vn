@@ -1,0 +1,111 @@
+<div class="clearfix"></div>
+<div class="row select-category">
+    <div class="col-md-6 col-xs-6 current-category">
+        <span>Danh sách dự án</span>
+    </div>
+    <div class="col-md-6 col-xs-6">
+        <a ui-sref="app.projects.create">
+        <button  class="btn btn-primary pull-right" style="margin-top:20px">TẠO DỰ ÁN</button>
+        </a>
+    </div>
+</div>
+</div>
+
+<div class="row question-filter" id="question_filter">
+
+    <div class="col-md-6 col-xs-6 col-md-offset-6">
+        <div class="number-of-questions-wrapper">
+            <span class="number-of-questions-text">Số bản ghi mỗi trang:</span>
+
+            <div class="number-of-questions">
+                <select id="filter-numbers" class="select-grey-bg">
+                    <option value="indexf6cc.html?numbers=20">20</option>
+                    <option value="index65f9.html?numbers=15">15</option>
+                    <option selected value="index5481.html?numbers=10">10</option>
+                    <option value="index65a2.html?numbers=5">5</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END QUESTIONS-FILTER -->
+<div class="main-questions-list">
+    <div class="table-responsive">
+        <table class="table table-border">
+            <tr>
+                <th>#</th>
+                <th>Tên dự án</th>
+                <th>Thông tin dự án</th>
+                <th>Chính sách</th>
+
+                <th>Tác vụ</th>
+            </tr>
+
+            <tr style="cursor: pointer">
+                <td>
+                    1
+                </td>
+                <td>
+                    <p><strong>Dự án Trung Văn 1</strong></p>
+
+
+                </td>
+                <td>
+                    <p><strong>Chủ đầu tư : </strong> Trung Văn Building <br/></p>
+                    <p><strong>Địa chỉ : </strong> Sô 8 - Đông nh, Huyện Đông Anh, Hà Nội  <br/></p>
+                    <p><strong>Giá gốc/m<sup>2</sup> </strong> : 21.000.000 vnđ</p>
+                    <p><strong>Tình trạng </strong> : <label class="label label-success">Đã xây dựng xong</label></p>
+                </td>
+                <td>
+                    <p><strong>Kiểu hoa hồng</strong> : Theo % căn hộ </p>
+                    <p><strong>Tổng % hoa hồng </strong> : 1%/căn hộ</p>
+                    <p><strong>% Giới thiệu </strong> : <label class="label label-success">30%</label></p>
+                    <p><strong>% Chốt được khách </strong> : <label class="label label-success">80%</label></p>
+
+                </td>
+                <td>
+                    <button class="btn btn-success btn-sm">Chỉnh sửa</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    <p><strong>Dự án 304 Hồ Tùng Mậu 2</strong></p>
+
+
+                </td>
+                <td>
+                    <p><strong>Chủ đầu tư : </strong> Hồ Tùng Mậu <br/></p>
+                    <p><strong>Địa chỉ : </strong> Sô 305 - Hồ Tùng Mậu, Hà Nội  <br/></p>
+                    <p><strong>Giá gốc/m<sup>2</sup> </strong> : 21.000.000 vnđ</p>
+                    <p><strong>Tình trạng </strong> : <label class="label label-danger">Đang xây dựng</label></p>
+                </td>
+                <td>
+                    <p><strong>Kiểu hoa hồng</strong> : Cố định tiền </p>
+                    <p><strong>Tổng tiền hoa hồng </strong> : 30.000.000đ</p>
+                    <p><strong>% Giới thiệu </strong> : 9.000.000đ <label class="label label-success">30%</label></p>
+                    <p><strong>% Chốt được khách </strong> : 21.000.000đ <label class="label label-success">70%</label></p>
+                </td>
+                <td>
+                    <button class="btn btn-success btn-sm">Chỉnh sửa</button>
+                </td>
+            </tr>
+        </table>
+        <div class="col-md-12 text-center" ng-if="loadingData">
+            Đang tải dữ liệu
+        </div>
+    </div>
+
+
+</div>
+<!-- END MAIN-QUESTIONS-LIST -->
+<div class="row home">
+    <div class="col-md-12 text-right">
+        <pagination total-items="total" ng-model="currentPage" max-size="item_page" class="pagination-sm"
+                    boundary-links="true" rotate="false" ng-click="load()"></pagination>
+    </div>
+</div>
+<!-- END MAIN-PAGINATIONS -->
+<div class="clearfix"></div>

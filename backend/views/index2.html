@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="SemiColonWeb"/>
+
+    <!-- Stylesheets
+    ============================================= -->
+    <!--<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700"-->
+          <!--rel="stylesheet" type="text/css"/>-->
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- One Page Module Specific Stylesheet -->
+    <link rel="stylesheet" href="css/onepage.css" type="text/css"/>
+    <!-- / -->
+
+    <link rel="stylesheet" href="css/dark.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="css/et-line.css" type="text/css"/>
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css"/>
+
+    <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
+
+    <link rel="stylesheet" href="css/responsive.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/cc_login.js"></script>
+    <script>
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(window.location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        if(getParameterByName('refer')){
+          sessionStorage.setItem('refer_code', getParameterByName('refer'));
+        };
+    </script>
+    <!-- Document Title
+    ============================================= -->
+    <title>KingsLand - Hệ thống môi giới Bất Động Sản</title>
+
+</head>
+
+<body class="stretched side-push-panel">
+
+<div class="body-overlay"></div>
+
+<div id="side-panel" class="dark">
+
+    <div id="side-panel-trigger-close"><a href="#"><i class="icon-line-cross"></i></a></div>
+
+    <div class="side-panel-wrap">
+
+        <div class="widget widget_links clearfix">
+
+            <h4>Đăng nhập</h4>
+
+            <div style="font-size: 14px; line-height: 1.7;">
+                <form class="nobottommargin" id="template-contactform" name="template-contactform" action=""
+                      method="post" novalidate="novalidate" onsubmit="return false">
+
+                    <div class="form-process"></div>
+
+
+                    <div class="col_full">
+                        <input type="email" id="login_email" name="template-contactform-email" value=""
+                               class="required email sm-form-control border-form-control" placeholder="Số điện thoại"
+                               aria-required="true">
+                    </div>
+
+                    <div class="col_full">
+                        <input type="password" id="login_password" name="template-contactform-password" value=""
+                               class="required sm-form-control border-form-control" placeholder="Mật khẩu"
+                               aria-required="true">
+                    </div>
+                    <a href="http://www.sales1.vn/users/siteforgotpassword">
+                        <small style="display: block; font-size: 13px; margin-top: 15px; color: #ccc">Không thể đăng nhập?
+                        </small>
+                    </a>
+
+                    <div class="col_full center">
+                        <button class="button button-border button-circle t500 noleftmargin topmargin-sm" type="submit"
+                                id="login_cc" name="template-contactform-submit" value="submit">Đăng nhập
+                        </button>
+                        <br>
+
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <div class="col_full hidden">
+                        <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck"
+                               value="" class="sm-form-control">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+        <div class="widget quick-contact-widget clearfix">
+
+            <h4>Kết nối mạng xã hội</h4>
+
+            <a href="http://www.facebook.com/collaboratecloud" class="social-icon si-small si-colored si-facebook"
+               title="Facebook">
+                <i class="icon-facebook"></i>
+                <i class="icon-facebook"></i>
+            </a>
+            <a href="http://www.twitter.com/collab_cloud" class="social-icon si-small si-colored si-twitter"
+               title="Twitter">
+                <i class="icon-twitter"></i>
+                <i class="icon-twitter"></i>
+            </a>
+
+            <a href="#" class="social-icon si-small si-colored si-linkedin" title="LinkedIn">
+                <i class="icon-linkedin"></i>
+                <i class="icon-linkedin"></i>
+            </a>
+            <a href="#" class="social-icon si-small si-colored si-gplus" title="Google Plus">
+                <i class="icon-gplus"></i>
+                <i class="icon-gplus"></i>
+            </a>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+    <!-- Header
+============================================= -->
+    <header id="header" class="full-header transparent-header dark  static-sticky" data-sticky-class="not-dark"
+            data-sticky-offset="full" data-sticky-offset-negative="100">
+
+        <div id="header-wrap">
+
+            <div class="container clearfix">
+
+                <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                <!-- Logo
+                ============================================= -->
+                <div id="logo">
+                    <a href="./index.html" class="standard-logo"
+                       data-dark-logo="./images/kingsland-white-logo.png"><img
+                            src="./images/kingsland-red-logo.png" alt="Canvas Logo"></a>
+                    <a href="./index.html" class="retina-logo"
+                       data-dark-logo="./images/kingsland-white-logo@2x.png"><img
+                            src="./images/kingsland-red-logo@2x.png"
+                            alt="Canvas Logo"></a>
+                </div>
+                <!-- #logo end -->
+
+                <!-- Primary Navigation
+                ============================================= -->
+                <nav id="primary-menu">
+
+                    <ul>
+                        <li><a href="./index.html">
+                            <div>Trang chủ</div>
+                        </a></li>
+                        <li><a href="./invester.html">
+                            <div>Đầu tư</div>
+                        </a>
+                        </li>
+                        <li><a href="./tuyen-dung.html">
+                            <div>Tuyển dụng</div>
+                        </a></li>
+                        <li><a href="/system/#/dang-ky">
+                            <button class="button button-border button-circle t500 noleftmargin requestdemobtn"
+                                    type="submit" id="template-contactform-submit" name="template-contactform-submit"
+                                    value="submit">Ứng tuyển
+                            </button>
+                        </a></li>
+                    </ul>
+
+                    <!--                     <div id="side-panel-trigger"><a href="/system/#/dang-nhap"><i class="icon-lock"></i></a></div>
+                     -->
+                </nav>
+                <!-- #primary-menu end -->
+
+            </div>
+
+        </div>
+
+    </header>
+    <!-- #header end -->
+
+
+    <!-- Slider
+        ============================================= -->
+    <section id="slider" class="slider-parallax full-screen force-full-screen">
+
+        <div class="full-screen force-full-screen dark section nopadding nomargin noborder ohidden"
+             style="background-image: url('./images/page/slider-1.jpg'); background-size: cover; background-position: center center;">
+
+            <div class="container center">
+                <div class="vertical-middle ignore-header">
+                    <div class="emphasis-title">
+                        <h1>
+								<span class="text-rotater nocolor" data-separator="|" data-rotate="fadeIn"
+                                      data-speed="6000">
+									tăng <span class="t-rotate t300 font-body opm-word">thu nhập.|hiệu suất.</span>
+								</span>
+
+                        </h1>
+                        <span data-caption-animate="fadeInUp" data-caption-delay="200" class="fadeInUp animated lead">hệ thống chuỗi cho thuê nhà ở, văn phòng giá rẻ, chất lượng tốt</span>
+                    </div>
+                    <a href="#" class="button button-border button-light button-circle" data-scrollto="#section-works"
+                       data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Tìm hiểu</a>
+                </div>
+            </div>
+
+            <div class="video-wrap">
+                <div class="video-overlay" style="background-color: rgba(0,0,0,0);"></div>
+            </div>
+
+            <a href="#" data-scrollto="#section-about" data-easing="easeInOutExpo" data-speed="1250" data-offset="65"
+               class="one-page-arrow dark"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+
+        </div>
+
+    </section>
+    <!-- #slider end -->
+
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap nopadding">
+
+
+            <div id="section-works" class="page-section notoppadding">
+                <div class="section nomargin">
+                    <div class="container clearfix">
+                        <div class="divcenter center" style="max-width: 900px;">
+                            <h2 class="nobottommargin t300 ls1">
+                                Với sứ mệnh <i>"Làm giàu hợp pháp cho mọi người"</i>. Với 1 click, hãy gửi cho chúng tôi
+                                khách hàng có nhu cầu Bất Động Sản. Bạn sẽ có thu nhập rất cao từ chúng tôi.</h2>
+                            </p></div>
+                        </p></div>
+                    </p></div>
+            </div>
+            <div id="section-about" class="center page-section notoppadding nobottompadding">
+                <div class="container clearfix">
+                    <h2 class="divcenter bottommargin font-body" style="max-width: 700px; font-size: 30px;">Hệ thống Bất
+                        động sản kingsland<br/>
+                        <span class="lead" style="color:#000;">Hiểu được mong muốn làm giàu - an toàn - hợp pháp của bất kỳ ai. Chúng tôi xây dựng - phát triển hệ thống để phục vụ mong muốn đó.</span>
+                    </h2>
+
+                    <div class="clear"></div>
+                    <div class="col-md-12">
+                        <div class="max-height">
+                            <div class="row common-height grid-border clearfix">
+                                <div class="col-md-4 col-sm-6 col-padding" style="height: 258px;">
+                                    <div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+                                        <div class="fbox-icon">
+                                            <i class="icon-et-gears"></i>
+                                        </div>
+                                        <h3>Hệ thống hợp pháp</h3>
+                                        </p></div>
+                                    </p></div>
+                                <div class="col-md-4 col-sm-6 col-padding" style="height: 258px;">
+                                    <div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+                                        <div class="fbox-icon">
+                                            <i class="icon-et-hotairballoon"></i>
+                                        </div>
+                                        <h3>Không bỏ bất kỳ 1 chi phí nào</h3>
+                                        </p></div>
+                                    </p></div>
+                                <div class="col-md-4 col-sm-6 col-padding" style="height: 258px;">
+                                    <div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+                                        <div class="fbox-icon">
+                                            <i class="icon-et-puzzle"></i>
+                                        </div>
+                                        <h3>Không đa cấp</h3>
+                                        </p></div>
+                                    </p></div>
+                                <div class="col-md-4 col-sm-6 col-padding" style="height: 258px;">
+                                    <div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+                                        <div class="fbox-icon">
+                                            <i class="icon-et-genius"></i>
+                                        </div>
+                                        <h3>Thu nhập cao - mãi mãi</h3>
+                                        </p></div>
+                                    </p></div>
+                                <div class="col-md-4 col-sm-6 col-padding" style="height: 258px;">
+                                    <div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+                                        <div class="fbox-icon">
+                                            <i class="icon-barcode"></i>
+                                        </div>
+                                        <h3>Minh bạch - Uy tín</h3>
+                                        </p></div>
+                                    </p></div>
+                                <div class="col-md-4 col-sm-6 col-padding" style="height: 258px;">
+                                    <div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+                                        <div class="fbox-icon">
+                                            <i class="icon-et-presentation"></i>
+                                        </div>
+                                        <h3>Bồi thường lên tới 100%</h3>
+                                        </p></div>
+                                    </p></div>
+                                </p></div>
+                            </p></div>
+                        </p></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="center page-section notoppadding nobottompadding">
+                <div class="container clearfix">
+                    <h2 class="divcenter bottommargin topmargin font-body" style="max-width: 700px; font-size: 30px;">
+                        Những ai có thể tham gia?</h2>
+
+                    <div class="clear"></div>
+                    <p><img src="./images/whouses.png"></p>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="notoppadding notopborder nomargin">
+                <div class="container clearfix">
+                    <div class="col_two_fifth topmargin-sm nobottommargin" id="radarChart" style="opacity: 1;">
+                        <img src="./images/open-collaboration.png">
+                    </div>
+                    <div class="col_three_fifth nobottommargin col_last">
+                        <div class="heading-block topmargin-sm">
+                            <h2>Tạo thu nhập?</h2>
+
+                            <p><span class="lead">Các hình thức giúp bạn có thu nhập. </span></div>
+                        <p>1. Gửi cho chúng tôi khách hàng có nhu cầu về Bất động sản. Chúng tôi sẽ thực hiện tư vấn, hỗ
+                            trợ, giao dịch với khách hàng. Với mỗi giao dịch thành công, bạn sẽ nhận được % hoa hồng/dự
+                            án rất cao từ chúng tôi. <i>(Tips: Bạn có thể kiểm tra chéo khách hàng để biết tình trạng giao
+                            dịch.)</i></p>
+
+                        <p>2. Giới thiệu kingsland tới mọi người cùng tham gia. Chúng tôi rất trân trọng việc làm này của
+                            bạn. Với mỗi 1 người bạn mời tham gia, bạn sẽ có 400.000đ. Để tri ân bạn mãi mãi, trên mỗi
+                            giao dịch thành công từ người bạn giới thiệu. Bạn sẽ nhận được 200.000đ/giao dịch/thành viên
+                            bạn giới thiệu.</p>
+                        </div>
+                    </p></div>
+                </p></div>
+            <div id="section-works1" class="page-section notoppadding">
+                <div class="section parallax nomargin notopborder dark nobottompadding"
+                     style="padding: 100px 0px; background-image: url(./images/page/slider-2.jpg); background-position: 50% -33.1828125px;"
+                     data-stellar-background-ratio="0.3">
+                    <div class="container center clearfix">
+                        <div class="heading-block">
+                            <h2>Chúng tôi cam kết</h2>
+
+                            <p><span class="lead">Chúng tôi hiểu được và trân trọng - giữ vững dài lâu những giá trị các bạn đem lại cho chúng tôi.</span>
+                        </div>
+                        <div class="col_one_third">
+                            <div class="feature-box fbox-center fbox-plain">
+                                <div class="fbox-icon">
+                                    <i class="i-alt text-white">100%</i>
+                                </div>
+                                <h3>Bồi thường giao dịch lỗi.</h3>
+                                </p></div>
+                            </p></div>
+                        <div class="col_one_third">
+                            <div class="feature-box fbox-center fbox-plain">
+                                <div class="fbox-icon">
+                                    <a href="#"><i class="i-alt text-white">100%</i></a>
+                                </div>
+                                <h3>Không bỏ bất kỳ 1 chí phí nào.</h3>
+                                </p></div>
+                            </p></div>
+                        <div class="col_one_third col_last">
+                            <div class="feature-box fbox-center fbox-plain">
+                                <div class="fbox-icon">
+                                    <a href="#"><i class="i-alt text-white">100%</i></a>
+                                </div>
+                                <h3>Tri ân: lợi nhuận mãi mãi.</h3>
+                                </p></div>
+                            </p></div>
+                        </p></div>
+                    </p></div>
+                </p></div>
+
+            <div id="section-blog" class="page-section notoppadding">
+                <h2 class="center font-body">HUẤN LUYỆN</h2> <br>
+
+                <div class="container clearfix">
+
+
+                    <div class="col_one_third nobottommargin ">
+                        <div class="feature-box media-box">
+                            <div class="fbox-media">
+                                <a href="#"
+                                   title="Permalink to Home">
+                                    <img width="491" height="321" src="./images/streamline-store-operations.jpg"
+                                         class="attachment-post-thumbnail wp-post-image"
+                                         alt="Email is not dead - collaborate better"/>
+                                </a>
+                            </div>
+                            <div class="fbox-desc">
+                                <a href="http://www.kingsland.vn/?p=1042" title="Permalink to Home"><h3>1. Hướng dẫn giới
+                                    thiệu - tư vấn khách hàng có nhu cầu Bất động sản </h3></a>
+                                <p>Miêu tả ngắn. </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col_one_third nobottommargin ">
+                        <div class="feature-box media-box">
+                            <div class="fbox-media">
+                                <a href="#"
+                                   title="Permalink to Home">
+                                    <img width="491" height="321" src="./images/performance-management.jpg"
+                                         class="attachment-post-thumbnail wp-post-image"
+                                         alt="Email is not dead - collaborate better"/>
+                                </a>
+                            </div>
+                            <div class="fbox-desc">
+                                <a href="#"
+                                   title="Permalink to Home"><h3>2. Cách tạo doanh thu hàng tháng tốt nhất.</h3></a>
+
+                                <p>Miêu tả ngắn. </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <div class="col_one_third nobottommargin col_last">
+                        <div class="feature-box media-box">
+                            <div class="fbox-media"><a
+                                    href="http://www.kingsland.vn/how-to-get-your-marketing-team-to-collaborate-better/"
+                                    title="Permalink to Home"><img width="491" height="321" src="./images/communicate-with-team.jpg"
+                                                                   class="attachment-post-thumbnail wp-post-image"
+                                                                   alt="Email is not dead - collaborate better"/></a>
+                            </div>
+                            <div class="fbox-desc">
+                                <a href="#"
+                                   title="Permalink to Home"><h3>3. Các hình thức giới thiệu mọi người.</h3></a>
+
+                                <p>Miêu tả ngắn.</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <div class="clear"></div>
+
+
+                </div>
+            </div>
+
+            <div class="section dark nomargin">
+                <div class="divcenter center" style="max-width: 900px;">
+                    <h2 class="nobottommargin t300 ls1">Tôi muốn tham gia <a href="javascript:void(0)"
+                                                                             data-scrollto="#template-contactform"
+                                                                             data-offset="-30"
+                                                                             data-easing="easeInOutExpo"
+                                                                             data-speed="1250"
+                                                                             class="button button-border button-circle button-light button-large notopmargin nobottommargin"
+                                                                             id="free-demo"
+                                                                             style="position: relative; top: -3px;">Đăng
+                        ký</a></h2>
+                </div>
+            </div>
+
+
+            <div id="section-contact" class="page-section notoppadding nobottommargin" style="display: none;">
+
+
+                <div class="container clearfix">
+
+                    <div class="divcenter topmargin" style="max-width: 850px;">
+
+                        <div id="contact-form-result" data-notify-type="success"
+                             data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
+
+                        <form class="nobottommargin" id="template-contactform1" name="template-contactform1"
+                              action="http://www.kingsland.vn/sendemail"
+                              method="post">
+
+                            <div class="form-process"></div>
+
+                            <div class="col_half">
+                                <input type="text" id="template-contactform-name" name="template-contactform-name"
+                                       value="" class="sm-form-control border-form-control required" placeholder="Name">
+                            </div>
+                            <div class="col_half col_last">
+                                <input type="email" id="template-contactform-email" name="template-contactform-email"
+                                       value="" class="required email sm-form-control border-form-control"
+                                       placeholder="Email Address">
+                            </div>
+
+                            <div class="clear"></div>
+
+                            <div class="col_one_third">
+                                <input type="text" id="template-contactform-phone" name="template-contactform-phone"
+                                       value="" class="sm-form-control border-form-control" placeholder="Phone">
+                            </div>
+
+                            <div class="col_two_third col_last">
+                                <input type="text" id="template-contactform-company" name="template-contactform-company"
+                                       value="" class="required sm-form-control border-form-control"
+                                       placeholder="Company">
+                            </div>
+
+                            <div class="clear"></div>
+
+                            <div class="col_full">
+                                <textarea class="required sm-form-control border-form-control"
+                                          id="template-contactform-message" name="template-contactform-message" rows="7"
+                                          cols="30"
+                                          placeholder="What business problem are you looking to solve?"></textarea>
+                            </div>
+
+                            <div class="col_full center">
+                                <button class="button button-border button-circle t500 noleftmargin topmargin-sm"
+                                        type="submit" id="template-contactform-submit1"
+                                        name="template-contactform-submit" value="submit">Request Demo
+                                </button>
+                                <br>
+                                <small style="display: block; font-size: 13px; margin-top: 15px;">We'll do our best to
+                                    get back to you within 12-24 working hours.
+                                </small>
+                            </div>
+
+                            <div class="clear"></div>
+
+                            <div class="col_full hidden">
+                                <input type="text" id="template-contactform-botcheck2"
+                                       name="template-contactform-botcheck" value="" class="sm-form-control">
+                            </div>
+
+                        </form>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- #content end -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#template-contactform1").validate({
+                submitHandler: function (form) {
+                    $('.form-process').fadeIn();
+                    $(form).ajaxSubmit({
+                        target: '#contact-form-result',
+                        success: function () {
+                            $('.form-process').fadeOut();
+                            $(form).find('.sm-form-control').val('');
+                            $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
+                            SEMICOLON.widget.notifications($('#contact-form-result'));
+                        }
+                    });
+                }
+
+            });
+
+            //$('#section-contact').hide();
+            $('#free-demo').click(function () {
+                $('#section-contact').show();
+                $('#template-contactform-name').focus();
+            })
+
+            $('.learnmore').click(function () {
+                $('#section-contact').show();
+                $('#template-contactform-name').focus();
+            })
+
+        })
+    </script>
+
+
+    <!-- Footer
+    ============================================= -->
+    <footer id="footer" class="dark noborder">
+
+        <div class="container center">
+            <div class="footer-widgets-wrap">
+
+                <div class="row divcenter clearfix">
+
+                    <div class="col-md-4">
+
+                        <div class="widget clearfix">
+                            <h4>Về KingsLand</h4>
+
+                            <div class="col-md-6">
+                                <ul class="list-unstyled footer-site-links nobottommargin text-center">
+                                    <li><a href="./index.html">Trang chủ</a></li>
+                                    <li><a href="./invester.html">Đầu tư</a></li>
+                                    <li><a href="./tuyen-dung.html">Tuyển dụng</a></li>
+                                    <li><a href="/about-us.html">Về chúng tôi</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled footer-site-links nobottommargin text-center">
+                                    <li><a href="./intro.html">Giới thiệu</a></li>
+                                    <li><a href="./privacy-policy.html">Chính sách</a></li>
+                                    <li><a href="./terms-of-service.html">Điều khoản</a></li>
+                                    <li><a href="./contact.html">Liên hệ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="widget clearfix">
+                            <h4>Theo dõi</h4>
+
+                            <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
+                            <form id="widget-subscribe-form" action="http://kingsland.vn/subscribe" role="form"
+                                  method="post" class="nobottommargin">
+                                <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email"
+                                       class="form-control input-lg not-dark required email"
+                                       placeholder="Địa chỉ Email của bạn">
+                                <button class="button button-border button-circle button-light topmargin-sm"
+                                        type="submit">Nhận tin tức mới
+                                </button>
+                            </form>
+                            <script type="text/javascript">
+                                $("#widget-subscribe-form").validate({
+                                    submitHandler: function (form) {
+                                        $(form).find('.input-group-addon').find('.icon-email2').removeClass('icon-email2').addClass('icon-line-loader icon-spin');
+                                        $(form).ajaxSubmit({
+                                            target: '#widget-subscribe-form-result',
+                                            success: function () {
+                                                $(form).find('.input-group-addon').find('.icon-line-loader').removeClass('icon-line-loader icon-spin').addClass('icon-email2');
+                                                $('#widget-subscribe-form').find('.form-control').val('');
+                                                $('#widget-subscribe-form-result').attr('data-notify-msg', $('#widget-subscribe-form-result').html()).html('');
+                                                SEMICOLON.widget.notifications($('#widget-subscribe-form-result'));
+                                            }
+                                        });
+                                    }
+                                });
+                            </script>
+                        </div>
+
+                        <div class="center topmargin-sm">
+                            <a href="http://www.facebook.com/kingsland.vn"
+                               class="social-icon inline-block noborder si-small si-facebook" title="Facebook">
+                                <i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i>
+                            </a>
+                            <a href="http://www.twitter.com/kingsland.vn"
+                               class="social-icon inline-block noborder si-small si-twitter" title="Twitter">
+                                <i class="icon-twitter"></i>
+                                <i class="icon-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/kingsland.vn"
+                               class="social-icon inline-block noborder si-small si-linkedin" title="Github">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="widget clearfix">
+                            <h4>Thành viên Đánh giá</h4>
+
+                            <blockquote class="quote">
+                                <p class="">Ngoài thu nhập chính ở công ty.Với kingsland, Tôi có thể tăng thu nhập cá nhân
+                                    của mình rất cao, đôi khi cao hơn thu nhập chính. Tôi rất hài lòng với hệ thống, đội
+                                    ngũ tư vấn, hỗ trợ tôi. <br>
+                                    <footer>Nam Nguyen — CEO Thegioididong.com</footer>
+                                </p>
+                            </blockquote>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="copyrights">
+            <div class="container center clearfix">
+                Copyright Kingsland Inc 2015 | All Rights Reserved
+            </div>
+        </div>
+
+    </footer>
+    <!-- #footer end -->
+
+</div>
+<!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- Footer Scripts
+============================================= -->
+<script type="text/javascript" src="./js/functions.js"></script>
+<script type="text/javascript" src="http://a.disquscdn.com/embed.js"></script>
+
+</body>
+</html>

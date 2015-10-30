@@ -1,0 +1,149 @@
+ <!-- Header
+============================================= -->
+  <header id="header" class="full-header transparent-header dark  static-sticky" data-sticky-class="not-dark"
+          data-sticky-offset="full" data-sticky-offset-negative="222">
+
+    <div id="header-wrap">
+
+      <div class="container clearfix">
+
+        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+        <!-- Logo
+        ============================================= -->
+        <div id="logo">
+          <a href="/index.html" class="standard-logo"
+             data-dark-logo="/images/kingsland-white-logo.png"><img
+              src="/images/kingsland-red-logo.png" alt="Canvas Logo"></a>
+          <a href="/index.html" class="retina-logo"
+             data-dark-logo="/images/kingsland-white-logo@2x.png"><img
+              src="/images/kingsland-red-logo@2x.png"
+              alt="Canvas Logo"></a>
+        </div>
+        <!-- #logo end -->
+
+        <!-- Primary Navigation
+        ============================================= -->
+        <nav id="primary-menu">
+
+          <ul>
+            <li><a href="/">
+                <div>Trang chủ</div>
+              </a></li>
+            <li><a href="http://kingsland.vn/p/tro-thanh-nha-dau-tu">
+                <div>Đầu tư</div>
+              </a>
+            </li>
+            <li><a href="http://kingsland.vn/p/tuyen-dung">
+                <div>Tuyển dụng <b class="badge tuyendung">5</b></div>
+              </a></li>
+            <li><a href="/system/#/dang-ky">
+                <button class="button button-border button-circle t500 noleftmargin requestdemobtn"
+                        type="submit" id="template-contactform-submit" name="template-contactform-submit"
+                        value="submit">Đăng nhập
+                </button>
+              </a></li>
+          </ul>
+
+          <!--                     <div id="side-panel-trigger"><a href="/system/#/dang-nhap"><i class="icon-lock"></i></a></div>
+           -->
+        </nav>
+        <!-- #primary-menu end -->
+
+      </div>
+
+    </div>
+
+  </header>
+  <!-- #header end -->
+
+
+  <!-- Slider
+      ============================================= -->
+  <section id="slider" class="slider-parallax full-screen force-full-screen">
+
+    <div class="full-screen force-full-screen dark section nopadding nomargin noborder ohidden"
+         style="background-image: url('/images/page/royal.jpg'); background-size: cover; background-position: center center;">
+
+      <div class="container center">
+        <div class="col-xs-12 vertical-middle ignore-header">
+          <div class="emphasis-title" style="margin: 0 0 10px">
+            <h1>
+								<span class="text-rotater nocolor" data-separator="|" data-rotate="fadeIn"
+                      data-speed="6000">
+									 thuê <span class="t-rotate t300 font-body opm-word">nhà ở|văn phòng|mặt bằng|phòng ở</span>
+								</span>
+
+            </h1>
+                        <span data-caption-animate="fadeInUp" data-caption-delay="200"
+                              style="text-shadow: 2px 1px 1px #000;" class="fadeInUp animated lead">
+                            Hệ thống cho thuê <strong>miễn phí</strong> - <strong>nhanh chóng</strong> - <strong>chuyên
+                            nghiệp</strong><br>Chúng tôi đã sẵn sàng phục vụ bạn!</span>
+          </div>
+          <!--<div class="request-form row">
+              <form class="form-inline">
+                  <div class="form-group">
+                      <input type="email" id="hoten" name="template-contactform-email" value=""
+                             class="form-control" placeholder="Nhập tên của bạn"
+                             aria-required="true">
+                      <input type="email" name="template-contactform-email" value=""
+                             class="form-control" placeholder="Số điện thoại"
+                             aria-required="true">
+
+                      <button type="submit" class="btn btn-default">GỬI</button>
+                  </div>
+              </form>
+          </div>-->
+
+
+          <!--     <a href="#" class="button button-border button-light button-circle" data-scrollto="#section-works"
+                  data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Tìm hiểu</a>-->
+        </div>
+      </div>
+
+      <div class="video-wrap">
+        <div class="video-overlay" style="background-color: rgba(0,0,0,0);"></div>
+      </div>
+
+      <a href="#" data-scrollto="#section-about" data-easing="easeInOutExpo" data-speed="1250" data-offset="65"
+         class="one-page-arrow dark"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+
+    </div>
+
+  </section>
+  <!-- #slider end -->
+
+
+  <!-- Content
+  ============================================= -->
+  <section id="content">
+
+    <div class="content-wrap nopadding" style="background: #f5f5f5;">
+      <div id="section-rent" class="center page-section  nobottompadding">
+        <div class="container clearfix">
+          <% datas.forEach(function(data) { %>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 item">
+              <a href="/l/<%= data.slug %>" class="thumbnail">
+                              <span class="screen">
+                                  <img src="/house/1_1445328144.jpg" alt="...">
+                                  <span class="status label label-success">ĐANG TRỐNG</span>
+                              </span>
+                <div class="description">
+                  <span class="label label-primary"><%= data.for_lease.vanphong %></span>
+                  <span class="price label label-danger price-format-vnd"><%= data.amount %></span>
+                  <span class="label label-default"><%= data.area %>m <sup>2</sup></span>
+                </div>
+
+                <div class="caption">
+                  <h6><%= data.house_number %> - <%= data.address %> - <%= data.dist %></h6>
+                </div>
+              </a>
+            </div>
+          <% }); %>
+
+        </div>
+      </div>
+
+
+
+

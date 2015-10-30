@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-10">
+        <div class="blog-classic-top">
+            <h2>{{data.title}}</h2>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Chủ đầu tư : </strong> {{item.contractor}} <br/></p>
+                    <p><strong>Địa chỉ : </strong> {{data.address}}, {{data.district.district_name}}, {{data.city.city_name}}  <br/></p>
+                    <p><strong>Giá gốc/m<sup>2</sup> </strong> : {{data.amount | vnNumber}} vnđ</p>
+                    <p><strong>Tình trạng </strong> : <label class="label label-success">Đã xây dựng xong</label></p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Kiểu hoa hồng</strong> : {{data.discount_type == 1 ? 'Theo % căn hộ' : 'Cố định tiền'}} </p>
+                    <p ng-if="data.discount_type == 1"><strong>Tổng % hoa hồng </strong> : {{data.discount_amount}}%/căn hộ</p>
+                    <p ng-if="data.discount_type == 2"><strong>Tổng tiền hoa hồng </strong> : {{data.discount_amount | vnNumber}} vnđ/căn hộ</p>
+                    <p><strong>Giới thiệu </strong> : <span ng-if="data.tip_type == 2">{{data.tip_invite | vnNumber}} vnđ</span> 
+                        <label ng-if="data.tip_type == 1" class="label label-success">{{data.tip_invite}}%</label>
+                    </p>
+                    <p><strong>Chốt được khách </strong> : <span ng-if="data.tip_type == 2">{{data.tip_contract | vnNumber}} vnđ</span>
+                        <label class="label label-success" ng-if="data.tip_type == 1">{{data.tip_contract}}%</label>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-wrapper">
+            <div class="row">
+                <div class="col-md-12 col-xs-12" id="page_content">
+                    <div class="blog-content" ng-bind-html="data.content">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div ng-include="'views/projects/right-sidebar.html'"></div> -->
+    <div ng-include="'views/partials/right-sidebar.html'"></div>
+</div>
+<div class="clearfix"></div>

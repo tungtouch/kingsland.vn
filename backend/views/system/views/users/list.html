@@ -1,0 +1,88 @@
+<div class="clearfix"></div>
+<div class="row select-category">
+    <div class="col-md-6 col-xs-12 current-category">
+        <span>Danh sách nhân viên</span>
+    </div>
+    <div class="col-md-6 col-xs-6">
+        <a ui-sref="app.projects.create">
+        <button  class="btn btn-primary pull-right" style="margin-top:20px">TẠO NHÂN VIÊN</button>
+        </a>
+    </div>
+</div>
+</div>
+
+<div class="row question-filter" id="question_filter">
+
+    <div class="col-md-6 col-xs-6 col-md-offset-6">
+        <div class="number-of-questions-wrapper">
+            <span class="number-of-questions-text">Số bản ghi mỗi trang:</span>
+
+            <div class="number-of-questions">
+                <select id="filter-numbers" class="select-grey-bg">
+                    <option value="indexf6cc.html?numbers=20">20</option>
+                    <option value="index65f9.html?numbers=15">15</option>
+                    <option selected value="index5481.html?numbers=10">10</option>
+                    <option value="index65a2.html?numbers=5">5</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END QUESTIONS-FILTER -->
+<div class="main-questions-list">
+    <div class="table-responsive">
+        <table class="table table-border">
+            <tr>
+                <th>#</th>
+                <th>Chức danh </th>
+                <th>Họ & tên </th>
+                <th>Email</th>
+                <th>Số tiền</th>
+                <th>Đăng nhập</th>
+            </tr>
+
+            <tr ng-repeat="item in list_projects" ng-click="$state.go('app.users.view', {id: item.id})" style="cursor:pointer;">
+                <td>
+                    {{$index + 1}}
+                </td>
+                <td>
+                    <label class="label label-{{item.type_invite == 1 ? 'primary' : 'success'}}">{{item.type_invite == 1 ? 'Giới thiệu' : 'Chốt khách hàng'}}</label> <br/>
+                </td>
+                <td>
+                    <p>{{item.fullname}}</p>
+                </td>
+                <td>
+                    <p>{{item.email}}</p>
+                </td>
+
+                <td>
+
+                    <label class="label label-{{commands_status[item.status].bg_color}}">{{commands_status[item.status].name}}</label>
+                </td>
+                <td>
+
+                    <label class="label label-{{commands_status[item.status].bg_color}}">{{commands_status[item.status].name}}</label>
+                </td>
+                <td>
+
+                    <label class="label label-{{commands_status[item.status].bg_color}}">{{commands_status[item.status].name}}</label>
+                </td>
+            </tr>
+
+        </table>
+        <div class="col-md-12 text-center" ng-if="loadingData">
+            Đang tải dữ liệu
+        </div>
+    </div>
+
+
+</div>
+<!-- END MAIN-QUESTIONS-LIST -->
+<div class="row home">
+    <div class="col-md-12 text-right">
+        <pagination total-items="total" ng-model="currentPage" max-size="item_page" class="pagination-sm"
+                    boundary-links="true" rotate="false" ng-click="load()"></pagination>
+    </div>
+</div>
+<!-- END MAIN-PAGINATIONS -->
+<div class="clearfix"></div>

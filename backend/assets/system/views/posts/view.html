@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-12 col-xs-12 col-lg-12 text-center" ng-if="loadingData">
+        Đang tải dữ liệu <i class="fa fa-spinner"></i>
+    </div>
+    <div class="col-md-12 col-xs-12 col-lg-12"  ng-if="loadingData == false">
+
+        <div class="blog-classic-top">
+            <h2 style="width: 100%; margin-bottom: 0px;" class="page-header">
+                <span class="pull-left">{{data.title}}</span>
+                <span class="pull-right">
+                    <button type="button" class="btn btn-primary"><a href="http://kingsland.vn/p/" target="_blank">Xem trên Website</a></button>
+                    <button type="button" ui-sref="app.posts.update({ id: data.id })" class="btn btn-primary">Sửa</button>
+                </span>
+            </h2>
+            <div class="row">
+                <div class="col-xs-12 text-right" style="margin-bottom: 10px; display: block;">
+                    <span style="margin-right: 10px;"><i class="fa fa-user"></i> {{data.user.fullname}}</span>
+                    <i class="fa fa-calendar"></i> {{data.date | date:'dd-MM-yyyy'}}
+                </div>
+                <div id="page_content" class="col-xs-12">
+                    <div ng-bind-html="data.content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="clearfix"></div>

@@ -1,0 +1,44 @@
+<div class="modal-header">
+    <div class="row">
+        <div class="col-md-12 text-center">
+          <h4>Cập nhật trạng thái</h4>
+        </div>
+    </div>
+</div>
+
+<div class="modal-body wrapper-md">
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+              <div class="form-group">
+                <label>Trạng thái</label>
+                <select name="" ng-model="frm.status" class="form-control">
+                    <option value="">Chọn trạng thái</option>
+                    <option value="{{key}}" ng-repeat="(key, item) in commands_status" >{{item.name}}</option>
+                </select>
+              </div>
+              <div class="form-group" ng-if="frm.status == 'SUCCESS'">
+                <label>Dự án</label>
+                <select name="" ng-model="frm.project" class="form-control">
+                    <option value="">Chọn dự án</option>
+                    <option value="{{item.id}}" ng-repeat="(key, item) in list_projects" >{{item.title}}</option>
+                </select>
+              </div>
+              <div class="form-group" ng-if="frm.status == 'SUCCESS'">
+                <label>Tổng giá trị căn</label>
+                <input type="text" class="form-control" ng-model="frm.total_amount" formatnumber>
+              </div>
+              <div class="form-group">
+                <label for="">Nhập nội dung</label>
+                <textarea name="" class="form-control" ng-model="frm.note"></textarea>
+              </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-info r-2x" ng-click="close()">Đóng</button>
+    <button type="submit" class="btn btn-success" ng-click="saveStatus(frm)">Cập nhật</button>
+</div>

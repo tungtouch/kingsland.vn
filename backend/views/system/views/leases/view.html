@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-10 text-center" ng-if="loadingData">
+        Đang tải dữ liệu <i class="fa fa-spinner"></i>
+    </div>
+    <div class="col-md-10"  ng-if="loadingData == false">
+
+        <div class="blog-classic-top">
+            <h2 style="width: 100%">
+                <span class="pull-left"><i ng-if="data.company_hire == true" class="fa fa-star" style="color: yellowgreen; margin-right: 5px;"></i>{{data.owner}}</span>
+                <span class="pull-right"><button type="button" ui-sref="app.leases.update({ id: data.id })" class="btn btn-primary">Sửa</button></span>
+            </h2>
+
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Địa chỉ : </strong> <span ng-if="privilige == 3 || privilige == 1 || privilige == 4">{{data.house_number}} </span>- {{data.address}} - {{data.dist}} <br/></p>
+
+                    <p><strong>Giá thuê </strong> : {{data.amount | vnNumber}} đ</p>
+
+                    <p><strong>Hoa hồng </strong> : {{data.number_tip | vnNumber}} đ</p>
+
+                    <p><strong>Diện tích </strong> : {{data.area}}m - <strong>Mặt tiền </strong> : {{data.facades}}m</p>
+                </div>
+                <div class="col-md-6">
+                    <p ng-if="privilige == 3 || privilige == 1 || privilige == 4"><strong>Điện thoại </strong> : {{data.phone}} đ</p>
+
+                    <p><strong>Số tầng</strong> : {{data.number_floor}} - <strong>Số phòng</strong> :
+                        {{data.number_rooms}} </p>
+
+                    <p><strong>Phù hợp</strong> : <label class="label label-info" style="margin-right:5px;"
+                                                         ng-repeat="item in data.for_lease" ng-if="item != false">{{item}}</label></p>
+
+                    <p><strong>Kiểu nhà</strong>: <label class="label label-primary" style="margin-right:5px;"
+                                                         ng-repeat="item in data.type_lease" ng-if="item != false">{{item}}</label></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <strong>Nội dung</strong> :
+                    <div ng-bind-html="data.content"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-xs-12" id="page_content">
+            <div class="page-header">
+                <h5 class="text-danger">KHÁCH HÀNG PHÙ HỢP</h5>
+            </div>
+        </div>
+    </div>
+    <!-- <div ng-include="'views/projects/right-sidebar.html'"></div> -->
+    <div ng-include="'views/partials/right-sidebar.html'"></div>
+</div>
+<div class="clearfix"></div>

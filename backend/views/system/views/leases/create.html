@@ -1,0 +1,331 @@
+<div class="clearfix"></div>
+<div class="row select-category">
+    <div class="col-md-6 col-xs-12 current-category">
+        <span>CHO THUÊ</span>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="padder m-t-md">
+	<div class="col-xs-12 text-center" ng-if="loadingData == true">
+		Đang tải dữ liệu <i class="fa fa-spinner"></i>
+	</div>
+	<form class="form-horizontal" method="post" ng-submit="create(frm)" ng-if="loadingData == false">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Kiểu nhà</label>
+					<div class="col-sm-9 type-leases">
+						<label class="col-sm-4">
+							<input type="checkbox" name="vehicle" ng-model="frm.for_lease.vanphong" ng-true-value="'Văn phòng'">Văn Phòng
+						</label>
+
+						<label class="col-sm-4">
+							<input type="checkbox" name="vehicle" ng-model="frm.for_lease.nharieng" ng-true-value="'Nhà riêng'">Nhà Riêng
+						</label>
+						<label class="col-sm-4">
+							<input type="checkbox" name="vehicle" ng-model="frm.for_lease.chungcu" ng-true-value="'Chung cư'">Chung Cư
+						</label>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<label class="col-sm-4">
+					<input type="checkbox" name="vehicle" ng-model="frm.for_lease.nhamapho" ng-true-value="'Nhà mặt phố'">Nhà Mặt Phố
+				</label>
+
+
+				<label class="col-sm-4">
+					<input type="checkbox" name="vehicle" ng-model="frm.for_lease.cuahang" ng-true-value="'Cửa hàng'">Cửa Hàng
+				</label>
+
+
+				<label class="col-sm-4">
+					<input type="checkbox" name="vehicle" ng-model="frm.for_lease.khoxuong" ng-true-value="'Kho xưởng'">Kho Xưởng
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label ">Phù hợp</label>
+					<div class="col-sm-9 col-xs-12">
+						<label class="col-sm-6 col-xs-6">
+							<input type="checkbox" name="vehicle" ng-model="frm.type_lease.kinhdoanh" ng-true-value="'Kinh doanh'">Kinh Doanh
+						</label>
+						<label class="col-sm-6 col-xs-6">
+							<input type="checkbox" name="vehicle" ng-model="frm.type_lease.vanphong" ng-true-value="'Văn phòng'">Văn Phòng
+						</label>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<div class="col-xs-12">
+					<label class="col-sm-4 col-xs-6">
+						<input type="checkbox" name="vehicle" ng-model="frm.type_lease.nhao" ng-true-value="'Nhà ở'"> Nhà Ở
+					</label>
+					<label class="col-sm-8 col-xs-6">
+						<input type="checkbox" name="vehicle" ng-model="frm.type_lease.phongtro" ng-true-value="'Phòng trọ'"> Phòng Trọ
+					</label>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	    <div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label ">Tên chủ nhà</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" ng-model="frm.owner" placeholder="Chị Linh" required>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label ">Số điện thoại <i class="fa fa-eye-slash"></i></label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" ng-model="frm.phone" required value="" placeholder="0988.123.123">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	    <div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label ">Số nhà <i class="fa fa-eye-slash"></i></label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" ng-model="frm.house_number" required placeholder="15F">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label ">Địa chỉ</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" ng-model="frm.address" required placeholder="Nguyễn Thái Học">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label ">Quận</label>
+					<div class="col-sm-9">
+						<select name="dist" ng-model="frm.dist" id="dist" required class="form-control m-b">
+							<option value="Đống Đa">Đống Đa</option>
+							<option value="Thanh Xuân">Thanh Xuân</option>
+							<option value="Cầu Giấy">Cầu Giấy</option>
+							<option value="Ba Đình">Ba Đình</option>
+							<option value="Hai Bà Trưng">Hai Bà Trưng</option>
+							<option value="Tây Hồ">Tây Hồ</option>
+							<option value="Hoàn Kiếm">Hoàn Kiếm</option>
+							<option value="Hoàng Mai">Hoàng Mai</option>
+							<option value="Từ Liêm">Từ Liêm</option>
+							<option value="Hà Đông">Hà Đông</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Mặt tiền</label>
+					<div class="col-sm-9">
+						<div class="input-group m-b">
+							<input type="number" class="form-control" ng-model="frm.facades" required placeholder="5">
+							<span class="input-group-addon">m</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	    
+	    <div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label ">Giá thuê</label>
+					<div class="col-sm-9">
+						<div class="input-group m-b">
+							<input type="text" class="form-control" ng-model="frm.amount" required placeholder="8,800,000" formatnumber>
+							<span class="input-group-addon">đ/tháng</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Số tầng</label>
+					<div class="col-sm-9">
+						<div class="input-group m-b">
+							<input type="number" class="form-control" ng-model="frm.number_floor" required placeholder="3">
+							<span class="input-group-addon">tầng</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Diện tích</label>
+					<div class="col-sm-9">
+						<div class="input-group m-b">
+							<input type="number" class="form-control" ng-model="frm.area" required placeholder="70">
+							<span class="input-group-addon">m<sup>2</sup></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Số phòng</label>
+					<div class="col-sm-9">
+						<div class="input-group m-b">
+							<input type="number" class="form-control" ng-model="frm.number_rooms" required placeholder="6">
+							<span class="input-group-addon">phòng</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	    <div class="row">
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Tiền hoa hồng</label>
+					<div class="col-sm-9">
+						<div class="input-group m-b">
+							<input type="text" class="form-control" ng-model="frm.number_tip" required formatnumber placeholder="4,400,000">
+							<span class="input-group-addon">đ</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">
+						Công ty thuê
+					</label>
+					<div class="col-sm-9 form-inline">
+						<input type="checkbox" name="vehicle" ng-model="frm.company_hire" value="true">
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!--	<div class="row">
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Tổng tiền hoa hồng</label>
+					<div class="col-sm-9">
+						<div class="input-group m-b">
+							<input type="text" class="form-control" ng-model="frm.discount_amount" formatnumber>
+							<span class="input-group-addon">{{frm.discount_type == 1 ? 'vnđ': '%'}}</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Chuyên viên BĐS</label>
+					<div class="col-sm-9">
+						<div class="input-group m-b">
+							<input type="text" class="form-control" ng-model="frm.tip_contract = 30" formatnumber>
+							<span class="input-group-addon">{{frm.tip_type == 1 ? '%': 'vnđ'}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Giới thiệu khách</label>
+					<div class="col-sm-9">
+						<div class="input-group m-b">
+							<input type="text" class="form-control" ng-model="frm.tip_invite = 20" formatnumber>
+							<span class="input-group-addon">{{frm.tip_type == 1 ? '%': 'vnđ'}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Chốt sales</label>
+					<div class="col-sm-9">
+						<div class="input-group m-b">
+							<input type="text" class="form-control" ng-model="frm.tip_confirm = 10" formatnumber>
+							<span class="input-group-addon">{{frm.tip_type == 1 ? '%': 'vnđ'}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>-->
+
+	    <!-- <div class="form-group">
+	    			<label class="col-sm-1 control-label ">Hình ảnh</label>
+	    			<div class="col-sm-11">
+	    				<div ngf-drop ngf-select ng-model="files" class="drop-box"  style="border: 3px dotted #cdcdcd;padding: 15px;"
+	        ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true"
+	        accept="image/*,application/pdf">Drop pdfs or images here or click to upload</div>
+	    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+	    			</div>
+	    </div> -->
+
+	    <div class="form-group">
+			<label class="col-sm-1 control-label ">Nội dung</label>
+			<div class="col-sm-11">
+				<text-angular ng-model="frm.content"></text-angular>
+			</div>
+	    </div>
+
+	    <div class="form-group">
+			<div class="col-sm-12  text-center">
+				<button class="btn btn-primary" type="submit" ng-disabled="submit_btn">ĐĂNG</button>
+			</div>
+	    </div>
+	</form>	
+
+</div>
+
+
+
+
+
+
+<!-- END MAIN-QUESTIONS-LIST -->
+<div class="row paginations home">
+    <div class="col-md-12">
+    </div>
+</div>
+<!-- END MAIN-PAGINATIONS -->
+<div class="clearfix"></div>

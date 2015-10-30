@@ -1,0 +1,51 @@
+<div class="col-md-2 disable-mobile left-sidebar">
+    <div class="widget widget-btn">
+
+        <button ng-if="user.user.privilige == 2 || user.user.privilige == 1 || user.user.privilige == 5" type="button" data-toggle="modal" class="action ask-question" ng-click="$state.go('app.commands.create')">
+        <i class="fa fa-plus"></i> GỬI KHÁCH HÀNG</button>
+        <button ng-if="user.user.privilige == 3" type="button" data-toggle="modal" class="action ask-question" ng-click="$state.go('app.leases.create')">
+            <i class="fa fa-plus"></i> THÊM NHÀ</button>
+    </div>
+    <!-- END BUTTON MODAL QUESTION -->
+    <div class="widget widget-menus">
+        <div class="menu-left-menu-container">
+            <ul id="menu-left-menu-1" class="menu">
+                <li class="fa-question-circle" ng-if="user.user.privilige == 2 || user.user.privilige == 1 || user.user.privilige == 5"><a ui-sref="app.commands.list"><i class="fa fa-question-circle"></i>Khách của tôi</a></li>
+                <!--<li class="fa-question-circle" ui-sref-active="current-menu-item"><a ui-sref="app.projects.list"><i class="fa fa-question-circle"></i>Dự án</a></li>-->
+                <li ng-if="user.user.privilige == 3 || user.user.privilige == 1 || user.user.privilige == 5" class="fa-question-circle" ui-sref-active="current-menu-item"><a ui-sref="app.leases.list"><i class="fa fa-question-circle"></i>Nhà cho thuê</a></li>
+                <li ng-if="user.user.privilige == 5 || user.user.privilige == 1" class="fa-question-circle" ui-sref-active="current-menu-item"><a ui-sref="app.invest.list"><i class="fa fa-question-circle"></i>Nhà đầu tư</a></li>
+                <!--<li class="fa-trophy" ui-sref-active="current-menu-item"><a ui-sref="app.transactions.list"><i class="fa fa-trophy"></i>Giao dịch</a></li>-->
+                <li ng-if="user.user.privilige == 1" class="fa-users" ui-sref-active="current-menu-item"><a ui-sref="app.users.list"><i class="fa fa-users"></i>Nhân viên</a></li>
+                <li class="fa-users" ui-sref-active="current-menu-item"><a ui-sref="app.faq"><i class="fa fa-users"></i>Hỏi đáp/Hỗ trợ</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- END LEFT MENU -->
+    
+    <div class="clearfix"></div>
+    <!-- SOCIAL LINKs -->
+    <div class="social-links">
+        <ul>
+            <li>
+                <a href="" target="_blank" class="social fb">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a href="" target="_blank" class="social gg">
+                <i class="fa fa-google"></i>
+                </a>
+            </li>
+            <li>
+                <a href="" target="_blank" class="social yt">
+                <i class="fa fa-youtube"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- END / SOCIAL LINKs -->
+    <div class="copyright">
+        <br>
+        <a href="quy-dinh-va-noi-quy/index.html">Quy định & nội quy</a>
+    </div>
+</div>

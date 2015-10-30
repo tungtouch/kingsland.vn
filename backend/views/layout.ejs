@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="author" content="SemiColonWeb"/>
+
+  <!-- Stylesheets
+  ============================================= -->
+  <!--<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700"-->
+  <!--rel="stylesheet" type="text/css"/>-->
+  <link rel="shortcut icon" href="./fav.ico">
+  <link rel="stylesheet" href="/css/bootstrap.css" type="text/css"/>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- One Page Module Specific Stylesheet -->
+  <link rel="stylesheet" href="/css/onepage.css" type="text/css"/>
+  <!-- / -->
+
+  <link rel="stylesheet" href="/css/dark.css" type="text/css"/>
+  <link rel="stylesheet" href="/css/font-icons.css" type="text/css"/>
+
+  <link rel="stylesheet" href="/css/animate.css" type="text/css"/>
+  <link rel="stylesheet" href="/css/fonts.css" type="text/css"/>
+
+  <link rel="stylesheet" href="/css/responsive.css" type="text/css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <!--[if lt IE 9]>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+
+  <!-- External JavaScripts
+  ============================================= -->
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/plugins.js"></script>
+  <script type="text/javascript" src="/js/cc_login.js"></script>
+  <script type="text/javascript" src="/js/price.js"></script>
+  <script>
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(window.location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    if (getParameterByName('refer')) {
+      sessionStorage.setItem('refer_code', getParameterByName('refer'));
+    }
+    ;
+    $(document).ready(function () {
+      $('.price-format-vnd').priceFormat({prefix: '', suffix: 'đ/tháng', centsLimit: 0, thousandsSeparator: '.'});
+    })
+  </script>
+  <!-- Document Title
+  ============================================= -->
+  <title>KingsLand - Hệ thống chuỗi cho thuê Bất Động Sản</title>
+
+</head>
+<body class="stretched side-push-panel">
+<div class="body-overlay"></div>
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+  <%- body %>
+
+  <!-- Footer
+      ============================================= -->
+  <div id="footer" class="dark noborder">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="container footer-links">
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <h4>Kingsland.vn</h4>
+            <ul>
+              <li>
+                <a href="/p/gioi-thieu-kingsland">Giới thiệu Kingsland</a>
+              </li>
+              <li>
+                <a href="#">Tin tức</a>
+              </li>
+              <li>
+                <a href="/p/chinh-sach-bao-mat">Chính sách bảo mật</a>
+              </li>
+              <li>
+                <a href="/p/quy-dinh-dieu-khoan">Quy định & Điều khoản</a>
+              </li>
+              <li>
+                <a href="/p/tuyen-dung">Tuyển dụng</a>
+              </li>
+              <li>
+                <a href="/p/lien-he">Liên hệ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 visible-xs">
+            <hr class="line-gray">
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <h4>Về chúng tôi</h4>
+            <ul>
+              <li>
+                <a href="/p/tam-nhin-va-gia-tri-cot-loi">Tầm nhìn và giá trị cốt lõi</a>
+              </li>
+              <li>
+                <a href="/p/lich-su-van-hoa">Lịch sử - Văn hóa</a>
+              </li>
+              <li>
+                <a href="/p/doi-ngu-lanh-dao">Đội ngũ Lãnh đạo</a>
+              </li>
+              <li>
+                <a href="/p/trach-nhiem-xa-hoi">Trách nhiệm xã hội</a>
+              </li>
+              <li>
+                <a href="/p/hoat-dong-su-kien">Hoạt động sự kiện</a>
+              </li>
+              <li>
+                <a href="/p/thuong-hieu">Thương hiệu</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 visible-xs">
+            <hr class="line-gray">
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <h4>Dịch vụ</h4>
+            <ul>
+              <li>
+                <a href="/p/thue-van-phong">Thuê văn phòng</a>
+              </li>
+              <li>
+                <a href="/p/thue-nha-phong-o">Thuê nhà - phòng ở</a>
+              </li>
+              <li>
+                <a href="/p/thue-mat-bang-kinh-doanh">Thuê mặt bằng kinh doanh</a>
+              </li>
+              <li>
+                <a href="/p/giai-phap-kinh-doanh-chuoi">Giải pháp kinh doanh chuỗi</a>
+              </li>
+              <li>
+                <a href="/p/ky-gui-bat-dong-san">Ký gửi Bất động sản</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 visible-xs">
+            <hr class="line-gray">
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <h4>Hợp tác</h4>
+            <ul>
+              <li>
+                <a href="/p/tro-thanh-nha-dau-tu">Trở thành nhà đầu tư</a>
+              </li>
+              <li>
+                <a href="/p/tro-thanh-doi-tac">Trở thành đối tác</a>
+              </li>
+              <li>
+                <a href="/p/chuong-trinh-affiliate">Chương trình affiliate</a>
+              </li>
+              <li>
+                <a href="/p/chuong-trinh-cong-tac-vien">Chương trình cộng tác viên</a>
+              </li>
+              <li>
+                <a href="/p/chuong-trinh-startup">Chương trình "Khởi nghiệp"</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <hr class="line-gray">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container footer-contact">
+          <div class="col-sm-12 col-sm-3 col-md-3 hidden-xs">
+            <h4>Trợ giúp</h4>
+            <ul>
+              <li>
+                <a href="http://facebook.com/kingsland.vn">Trợ giúp trên Facebook</a>
+              </li>
+              <li>
+                <a href="/p/kien-thuc-bat-dong-san">Kiến thức Bất động sản</a>
+              </li>
+              <li>
+                <a href="/p/hinh-thuc-thanh-toan">Hình thức thanh toán</a>
+              </li>
+              <li>
+                <a href="/p/quy-trinh-tuyen-dung">Quy trình tuyển dụng</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-9 col-md-9">
+            <h4>
+              Liên hệ
+
+            </h4>
+            <strong class="uppercase">Công ty cổ phần đầu tư KingsLand</strong>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6">
+                <span>Trụ sở</span>
+                <ul>
+                  <li class="address">
+                    <span class="text-infos"><i class="fa fa-map-marker"></i>Số 3/39 Đông Tác - Đống Đa - Hà Nội</span>
+                  </li>
+                  <li class="phone">
+                    <span class="text-infos"><i class="fa fa-mobile"></i>0986345028 - <i class="fa fa-mobile"></i>0986667474</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 text-center">
+                <img src="/images/kingsland-full-logo.png" style="width: 300px;" alt=""/>
+              </div>
+            </div>
+            <span class="padding-sm-right">Hỗ trợ ngoài giờ HC &amp; Thứ 7, Chủ nhật:</span>
+            <span class="text-infos"><i class="fa fa-mobile"></i>0986345028 <i class="fa fa-envelope"></i>hotro@kingsland.vn</span>
+          </div>
+        </div>
+      </div>
+      <div class="row copyrights" id="copyrights">
+        <div class="container">
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <span>© Copyright 2015</span>
+          </div>
+          <div class="col-xs-12 col-sm-9 col-md-9">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6">
+                <span>KingsLand.vn - Giải pháp cho thuê Số 1 Việt nam</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- #footer end -->
+
+</div>
+<!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- Footer Scripts
+============================================= -->
+<script type="text/javascript" src="/js/functions.js"></script>
+<script src="/js/dependencies/sails.io.js"></script>
+
+<!--SCRIPTS END-->
+</body>
+</html>

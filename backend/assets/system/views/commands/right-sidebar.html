@@ -1,0 +1,41 @@
+<div class="col-md-2 disable-mobile right-sidebar">
+    <div class="padder m-t-sm">
+        <form>
+           <!--  <div class="form-group">
+               <label for="">Số điện thoại KH</label>
+               <input type="text" class="form-control" id="" placeholder="Số điện thoại KH cần tìm" ng-model="frm.customer_phone">
+           </div>
+           
+           <div class="form-group">
+               <label for="">Tên khách hàng</label>
+               <input type="text" class="form-control" id="" placeholder="Tên KH cần tìm" ng-model="frm.customer_name">
+           </div> -->
+
+            <div class="form-group">
+                <label>Trạng thái</label>
+                <select name="" id="" class="form-control" ng-model="frm.status">
+                    <option value="">Lọc theo trạng thái</option>
+                    <option value="{{key}}" ng-repeat="(key, value) in commands_status">{{value.name}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Trạng thái</label>
+                <select name="" id="" class="form-control" ng-model="frm.type_command">
+                    <option value="">Lọc theo nhu cầu</option>
+                    <option value="1" >Thuê nhà, phòng</option>
+                    <option value="2" >Mua nhà, phòng</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Thời gian đặt lệnh</label>
+                <input type="text" class="form-control" id="" placeholder="Từ" ng-model="frm.start_date"  datepicker-popup  is-open="open_start" ng-click="open_start = true"  max-date="'2020-06-22'" close-text="Đóng"
+                ><br/>
+                <input type="text" class="form-control" id="" placeholder="Đến" ng-model="frm.end_date" datepicker-popup is-open="open_end" ng-click="open_end = true" max-date="'2020-06-22'" close-text="Đóng">
+            </div>
+
+            <button type="submit" class="btn btn-primary" ng-click="load('ALL', frm)" ng-disabled="loadingData">Tìm kiếm</button>
+        </form>
+    </div>
+</div>

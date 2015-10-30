@@ -1,0 +1,170 @@
+<div class="clearfix"></div>
+<div class="row select-category">
+    <div class="col-md-6 col-xs-12 current-category">
+        <span>Gửi khách hàng</span>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="padder m-t-md">
+    <form class="form-horizontal" method="post" ng-submit="create(frm)">
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">Tên khách hàng</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" ng-model="frm.customer.fullname" required placeholder="Anh Nam" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">Số điện thoại <i class="fa fa-eye-slash"></i></label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" ng-model="frm.customer.phone" required placeholder="0988123123">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">Hình thức</label>
+            <div class="col-sm-8">
+                <div class="row">
+
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.type_lease.kinhdoanh" ng-true-value="'Kinh doanh'">Kinh doanh
+                    </label>
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.type_lease.vanphong" ng-true-value="'Văn phòng'">Văn phòng
+                    </label>
+
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.type_lease.nhao" ng-true-value="'Nhà ở'">Nhà ở
+                    </label>
+
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.type_lease.phongtro" ng-true-value="'Phòng trọ'" >Phòng trọ
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">Giá thuê</label>
+            <div class="col-sm-8">
+                 <div class="row">
+                     <div class="col-xs-5">
+                         <div class="input-group m-b">
+                             <input type="text" class="form-control" ng-model="frm.amount_range_min" required placeholder="8,000,000" formatnumber>
+                             <span class="input-group-addon">đ</span>
+                         </div>
+                     </div>
+                     <div class="col-xs-1">
+                         ⇨
+                     </div>
+                     <div class="col-xs-6">
+                         <div class="input-group m-b">
+                             <input type="text" class="form-control" ng-model="frm.amount_range_max" required placeholder="10,000,000" formatnumber>
+                             <span class="input-group-addon">đ</span>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">Diện tích</label>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="input-group m-b">
+                            <input type="text" class="form-control" ng-model="frm.area_range_min" required placeholder="80" formatnumber>
+                            <span class="input-group-addon">m</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-1">
+                        ⇨
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="input-group m-b">
+                            <input type="text" class="form-control" ng-model="frm.area_range_max" required placeholder="100" formatnumber>
+                            <span class="input-group-addon">m</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">Khu vực thuê</label>
+            <div class="col-sm-8">
+                <div class="row">
+
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.dist_lease.dongda" ng-true-value="'Đống Đa'" >Đống Đa
+                    </label>
+
+
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.dist_lease.thanhxuan" ng-true-value="'Thanh Xuân'" >Thanh Xuân
+                    </label>
+
+
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.dist_lease.caugiay" ng-true-value="'Cầu Giấy'" >Cầu Giấy
+                    </label>
+
+
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.dist_lease.badinh" ng-true-value="'Ba Đình'" >Ba Đình
+                    </label>
+
+                </div>
+                <div class="row">
+
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.dist_lease.tayho" ng-true-value="'Tây Hồ'" >Tây Hồ
+                    </label>
+
+
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.dist_lease.hoankiem" ng-true-value="'Hoàn Kiếm'" >Hoàn Kiếm
+                    </label>
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.dist_lease.hoangmai" ng-true-value="'Hoàng Mai'" >Hoàng Mai
+                    </label>
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.dist_lease.tuliem" ng-true-value="'Từ Liêm'" >Từ Liêm
+                    </label>
+                </div>
+                <div class="row">
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.dist_lease.haibatrung" ng-true-value="'Hai Bà Trưng'" >Hai Bà Trưng
+                    </label>
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-model="frm.dist_lease.hadong" ng-true-value="'Hà Đông'" >Hà Đông
+                    </label>
+                    <label class="col-sm-3">
+                        <input type="checkbox" name="vehicle" ng-click="checkAllDistLease()" ng-model="dist_lease_checked">Tất cả
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">Yêu cầu khác</label>
+            <div class="col-sm-8">
+                <textarea ng-model="frm.note" class="col-xs-12 form-control" style="height:100px;"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-6 control-label ">&nbsp;</label>
+            <div class="col-sm-6">
+                <button class="btn btn-primary" type="submit" ng-disabled="submit_btn">ĐẶT LỆNH</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- END MAIN-QUESTIONS-LIST -->
+<div class="row paginations home">
+    <div class="col-md-12">
+    </div>
+</div>
+<!-- END MAIN-PAGINATIONS -->
+<div class="clearfix"></div>

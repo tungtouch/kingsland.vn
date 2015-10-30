@@ -1,0 +1,102 @@
+<div class="clearfix"></div>
+<div class="col-md-10">
+
+    <div class="row select-category">
+        <div class="col-md-6 col-xs-12 current-category">
+            <span>Danh sách lệnh đã đặt</span>
+        </div>
+    </div>
+
+   <!--  <div class="row question-filter" id="question_filter">
+       <div class="col-md-8 col-xs-8 sort-questions">
+           <ul>
+               <li>
+                   <a class="active" ng-click='load("ALL", frm)'>Tất cả</a>
+               </li>
+               <li ng-repeat="(key, value) in commands_status" ng-click='load(key, frm)'>
+                   <a class="">{{value.name}}</a>
+               </li>
+               
+           </ul>
+       </div>
+       <div class="col-md-4 col-xs-4">
+           <div class="number-of-questions-wrapper">
+               <span class="number-of-questions-text">Số bản ghi mỗi trang:</span>
+               <div class="number-of-questions">
+                   <select id="filter-numbers" class="select-grey-bg" ng-model="frm.item_page">
+                       <option  value="20">20</option>
+                       <option  value="15">15</option>
+                       <option selected value="10">10</option>
+                       <option  value="5">5</option>
+                   </select>
+               </div>
+           </div>
+       </div>
+   </div> -->
+    <!-- END QUESTIONS-FILTER -->
+    <div class="main-questions-list">
+        <div class="table-responsive">
+            <table class="table table-border table-hover">
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        Tên khách hàng
+                    </th>
+                    <th>
+                        Thông tin
+                    </th>
+                    <th>
+                        Hình thức
+                    </th>
+                    <th>
+                        Khu vực
+                    </th>
+                    <th>
+                        Trạng thái
+                    </th>
+                </tr>
+                <tr ng-repeat="item in list_commands" ng-click="$state.go('app.commands.view', {id: item.id})">
+                    <td>
+                        {{$index + 1}}
+                    </td>
+                    <td>
+                        <p><strong>{{item.customer[0].fullname}}</strong></p>
+                        <p>{{item.customer[0].phone}}</p>
+                    </td>
+                    <td>
+                        <p><strong>Giá thuê:</strong> {{item.amount_range_min}}đ - {{item.amount_range_max}}đ</p>
+                        <p><strong>Diện tích:</strong> {{item.area_range_min}}m - {{item.area_range_max}}m</p>
+                    </td>
+                    <td>
+                        <label class="label label-primary" style="margin-right:5px;" ng-repeat="item in item.type_lease" ng-if="item != false">{{item}}</label>
+                    </td>
+                   
+                    <td>
+
+                        <label class="label label-success" style="margin-right:5px;" ng-repeat="item in item.dist_lease" ng-if="item != false">{{item}}</label>
+                    </td>
+                    <td>
+
+                    </td>
+                    
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
+    <!-- END MAIN-QUESTIONS-LIST -->
+    <div class="row  home">
+        <div class="col-md-12 text-right">
+            <pagination total-items="total" ng-model="currentPage" max-size="item_page" class="pagination-sm"
+                    boundary-links="true" rotate="false" ng-click="load()" first-text="Trang đầu" next-text="Tiếp theo" last-text="Trang cuối" previous-text="Sau"></pagination>
+        </div>
+    </div>
+</div>
+
+<!-- <div ng-include="'views/commands/right-sidebar.html'"></div> -->
+<div ng-include="'views/partials/right-sidebar.html'"></div>
+<!-- END MAIN-PAGINATIONS -->
+<div class="clearfix"></div>
